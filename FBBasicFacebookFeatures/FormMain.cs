@@ -97,7 +97,8 @@ namespace BasicFacebookFeatures
         private void fetchUserInfo()
         {
             picture_smallPictureBox.LoadAsync(m_LoggedInUser.PictureNormalURL);
-            if (m_LoggedInUser.Posts.Count > 0)
+            picture_smallPictureBox.LoadAsync(m_LoggedInUser.Cover.SourceURL);
+            if (m_LoggedInUser.Posts.Count > 0) // maybe in diffrent place
             {
                 textBoxStatus.Text = m_LoggedInUser.Posts[0].Message; 
             }
@@ -176,7 +177,7 @@ namespace BasicFacebookFeatures
         private void linkUserActions_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             string actionType = comboBoxActionType.SelectedItem.ToString();
-            FacebookObjectCollection<Page> actions = FacebookService.GetCollection<Page>(actionType);
+            FacebookObjectCollection<Page> actions = FacebookService.GetCollection<Page>(actionType); // maybe try & catch
             dynamic actionsData = FacebookService.GetDynamicData(actionType);
             dataGridViewActions.DataSource = actions;
         }

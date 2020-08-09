@@ -56,6 +56,14 @@ namespace Ex01.ApplicationUI
             enableButtons();
             r_AppEngine.Connection.LoggedUser = r_AppEngine.Connection.LoginResult.LoggedInUser;
             f_ProfilePictureBox.Load(r_AppEngine.Connection.LoggedUser.PictureNormalURL);
+            foreach(Album album in r_AppEngine.Connection.LoggedUser.Albums)
+            {
+                if (album.Name == "Cover Photos")
+                {
+                    cover_smallPictureBox.Load(album.PictureThumbURL);
+                }
+            }
+            
             f_UserWellcome.Text = string.Format("Hello, {0}", r_AppEngine.Connection.LoggedUser.Name);
             getLastPostByUser();
         }
@@ -128,6 +136,30 @@ namespace Ex01.ApplicationUI
 
         }
 
+        private void fetchPosts()
+        {
+            foreach (Post post in r_AppEngine.Connection.LoggedUser.Posts)
+            {
+                if (post.Message != null)
+                {
+                    listBoxPosts.Items.Add(post.Message);
+                }
+                else if (post.Caption != null)
+                {
+                    listBoxPosts.Items.Add(post.Caption);
+                }
+                else
+                {
+                    listBoxPosts.Items.Add(string.Format("[{0}]", post.Type));
+                }
+            }
+
+            if (r_AppEngine.Connection.LoggedUser.Posts.Count == 0)
+            {
+                MessageBox.Show("No Posts to retrieve :(");
+            }
+        }
+
         private void buttonLogout_Click(object sender, EventArgs e)
         {
 
@@ -137,6 +169,57 @@ namespace Ex01.ApplicationUI
             r_AppSettings.SaveToFile();
             clearForm();
 
+        }
+
+        private void f_ShowFriendsButton_Click(object sender, EventArgs e)
+        {
+            ListBox listBoxFriends = new ListBox();
+
+            if (r_AppEngine.Connection.LoggedUser.Friends.Count == 0)
+            {
+                MessageBox.Show("No Friends to retrieve :(");
+            }
+            else
+            {
+                new FriendsListForm(r_AppEngine.Connection.LoggedUser.Friends).ShowDialog();
+            }
+        }
+
+        private void f_CheckinsButton_Click(object sender, EventArgs e)
+        {
+            if (r_AppEngine.Connection.LoggedUser.Checkins.Count == 0)
+            {
+                MessageBox.Show("No Checkins to retrieve :(");
+            }
+            else
+            {
+                new CheckInListForm(r_AppEngine.Connection.LoggedUser.Checkins).ShowDialog();
+            }
+        }
+
+        private void linkPosts_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            fetchPosts();
+        }
+
+        private void fetchEvents()
+        {
+            listBoxEvents.Items.Clear();
+            listBoxEvents.DisplayMember = "Name";
+            foreach (Event fbEvent in r_AppEngine.Connection.LoggedUser.Events)
+            {
+                listBoxEvents.Items.Add(fbEvent);
+            }
+
+            if (r_AppEngine.Connection.LoggedUser.Events.Count == 0)
+            {
+                MessageBox.Show("No Events to retrieve :(");
+            }
+        }
+
+        private void f_fetchEventsButton_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            fetchEvents();
         }
     }
 }

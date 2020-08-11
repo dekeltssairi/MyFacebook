@@ -33,19 +33,22 @@
             // 
             // f_CheckinListBox
             // 
+            this.f_CheckinListBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.f_CheckinListBox.FormattingEnabled = true;
-            this.f_CheckinListBox.ItemHeight = 16;
-            this.f_CheckinListBox.Location = new System.Drawing.Point(205, 101);
+            this.f_CheckinListBox.HorizontalScrollbar = true;
+            this.f_CheckinListBox.Location = new System.Drawing.Point(154, 82);
+            this.f_CheckinListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.f_CheckinListBox.Name = "f_CheckinListBox";
-            this.f_CheckinListBox.Size = new System.Drawing.Size(373, 228);
+            this.f_CheckinListBox.Size = new System.Drawing.Size(281, 186);
             this.f_CheckinListBox.TabIndex = 0;
             // 
             // CheckInListForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.f_CheckinListBox);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "CheckInListForm";
             this.Text = "CheckInListForm";
             this.ResumeLayout(false);

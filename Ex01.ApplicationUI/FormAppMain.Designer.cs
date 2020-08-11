@@ -38,15 +38,15 @@
             this.f_PostCommentslistBox = new System.Windows.Forms.ListBox();
             this.linkPosts = new System.Windows.Forms.LinkLabel();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.listBoxPosts = new System.Windows.Forms.ListBox();
+            this.f_EventpictureBox = new System.Windows.Forms.PictureBox();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.f_UserWellcome = new System.Windows.Forms.Label();
             this.buttonLogout = new System.Windows.Forms.Button();
             this.f_RememberMeCheckBox = new System.Windows.Forms.CheckBox();
             this.f_ProfilePictureBox = new System.Windows.Forms.PictureBox();
-            this.f_EventpictureBox = new System.Windows.Forms.PictureBox();
             this.listBoxEvents = new System.Windows.Forms.ListBox();
             this.f_fetchEventsButton = new System.Windows.Forms.LinkLabel();
-            this.listBoxPosts = new System.Windows.Forms.ListBox();
             this.f_Postbutton = new System.Windows.Forms.Button();
             this.f_lastPostStaus = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,8 +55,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cover_smallPictureBox)).BeginInit();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.f_ProfilePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.f_EventpictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.f_ProfilePictureBox)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,8 +104,8 @@
             this.tabPage2.Controls.Add(this.linkUserActions);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage2.Size = new System.Drawing.Size(649, 545);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(656, 535);
             this.tabPage2.TabIndex = 2;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -123,21 +123,24 @@
             this.dataGridViewActions.Name = "dataGridViewActions";
             this.dataGridViewActions.ReadOnly = true;
             this.dataGridViewActions.RowHeadersWidth = 51;
-            this.dataGridViewActions.Size = new System.Drawing.Size(815, 571);
+            this.dataGridViewActions.Size = new System.Drawing.Size(823, 711);
             this.dataGridViewActions.TabIndex = 22;
             // 
             // cover_smallPictureBox
             // 
-            this.cover_smallPictureBox.Location = new System.Drawing.Point(6, 67);
+            this.cover_smallPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cover_smallPictureBox.Location = new System.Drawing.Point(6, 51);
             this.cover_smallPictureBox.Name = "cover_smallPictureBox";
-            this.cover_smallPictureBox.Size = new System.Drawing.Size(195, 156);
-            this.cover_smallPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.cover_smallPictureBox.Size = new System.Drawing.Size(651, 155);
+            this.cover_smallPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.cover_smallPictureBox.TabIndex = 54;
             this.cover_smallPictureBox.TabStop = false;
             // 
             // f_CheckinsButton
             // 
-            this.f_CheckinsButton.Location = new System.Drawing.Point(525, 85);
+            this.f_CheckinsButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.f_CheckinsButton.Location = new System.Drawing.Point(329, 13);
             this.f_CheckinsButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.f_CheckinsButton.Name = "f_CheckinsButton";
             this.f_CheckinsButton.Size = new System.Drawing.Size(94, 19);
@@ -148,7 +151,8 @@
             // 
             // f_ShowFriendsButton
             // 
-            this.f_ShowFriendsButton.Location = new System.Drawing.Point(525, 51);
+            this.f_ShowFriendsButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.f_ShowFriendsButton.Location = new System.Drawing.Point(219, 13);
             this.f_ShowFriendsButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.f_ShowFriendsButton.Name = "f_ShowFriendsButton";
             this.f_ShowFriendsButton.Size = new System.Drawing.Size(96, 19);
@@ -159,21 +163,24 @@
             // 
             // f_PostCommentslistBox
             // 
-            this.f_PostCommentslistBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.f_PostCommentslistBox.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.f_PostCommentslistBox.DisplayMember = "name";
             this.f_PostCommentslistBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.f_PostCommentslistBox.FormattingEnabled = true;
+            this.f_PostCommentslistBox.HorizontalScrollbar = true;
             this.f_PostCommentslistBox.ItemHeight = 19;
-            this.f_PostCommentslistBox.Location = new System.Drawing.Point(214, 393);
+            this.f_PostCommentslistBox.Location = new System.Drawing.Point(420, 320);
+            this.f_PostCommentslistBox.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.f_PostCommentslistBox.Name = "f_PostCommentslistBox";
-            this.f_PostCommentslistBox.Size = new System.Drawing.Size(172, 118);
+            this.f_PostCommentslistBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.f_PostCommentslistBox.Size = new System.Drawing.Size(179, 118);
             this.f_PostCommentslistBox.TabIndex = 51;
             // 
             // linkPosts
             // 
+            this.linkPosts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.linkPosts.AutoSize = true;
-            this.linkPosts.Location = new System.Drawing.Point(213, 35);
+            this.linkPosts.Location = new System.Drawing.Point(19, 245);
             this.linkPosts.Name = "linkPosts";
             this.linkPosts.Size = new System.Drawing.Size(63, 13);
             this.linkPosts.TabIndex = 49;
@@ -183,31 +190,58 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.f_CheckinsButton);
+            this.tabPage1.Controls.Add(this.f_ShowFriendsButton);
+            this.tabPage1.Controls.Add(this.linkPosts);
+            this.tabPage1.Controls.Add(this.listBoxPosts);
+            this.tabPage1.Controls.Add(this.f_EventpictureBox);
             this.tabPage1.Controls.Add(this.buttonLogin);
             this.tabPage1.Controls.Add(this.f_UserWellcome);
             this.tabPage1.Controls.Add(this.buttonLogout);
             this.tabPage1.Controls.Add(this.f_RememberMeCheckBox);
-            this.tabPage1.Controls.Add(this.cover_smallPictureBox);
             this.tabPage1.Controls.Add(this.f_ProfilePictureBox);
-            this.tabPage1.Controls.Add(this.f_CheckinsButton);
-            this.tabPage1.Controls.Add(this.f_ShowFriendsButton);
             this.tabPage1.Controls.Add(this.f_PostCommentslistBox);
-            this.tabPage1.Controls.Add(this.f_EventpictureBox);
-            this.tabPage1.Controls.Add(this.linkPosts);
             this.tabPage1.Controls.Add(this.listBoxEvents);
             this.tabPage1.Controls.Add(this.f_fetchEventsButton);
-            this.tabPage1.Controls.Add(this.listBoxPosts);
             this.tabPage1.Controls.Add(this.f_Postbutton);
             this.tabPage1.Controls.Add(this.f_lastPostStaus);
             this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.cover_smallPictureBox);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage1.Size = new System.Drawing.Size(649, 395);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(656, 535);
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // listBoxPosts
+            // 
+            this.listBoxPosts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.listBoxPosts.DisplayMember = "name";
+            this.listBoxPosts.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxPosts.FormattingEnabled = true;
+            this.listBoxPosts.HorizontalScrollbar = true;
+            this.listBoxPosts.ItemHeight = 19;
+            this.listBoxPosts.Location = new System.Drawing.Point(19, 260);
+            this.listBoxPosts.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.listBoxPosts.MaximumSize = new System.Drawing.Size(400, 121);
+            this.listBoxPosts.Name = "listBoxPosts";
+            this.listBoxPosts.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.listBoxPosts.Size = new System.Drawing.Size(400, 118);
+            this.listBoxPosts.TabIndex = 40;
+            // 
+            // f_EventpictureBox
+            // 
+            this.f_EventpictureBox.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.f_EventpictureBox.Location = new System.Drawing.Point(526, 220);
+            this.f_EventpictureBox.Margin = new System.Windows.Forms.Padding(0);
+            this.f_EventpictureBox.Name = "f_EventpictureBox";
+            this.f_EventpictureBox.Size = new System.Drawing.Size(74, 68);
+            this.f_EventpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.f_EventpictureBox.TabIndex = 42;
+            this.f_EventpictureBox.TabStop = false;
             // 
             // buttonLogin
             // 
@@ -230,7 +264,8 @@
             // 
             // buttonLogout
             // 
-            this.buttonLogout.Location = new System.Drawing.Point(544, 514);
+            this.buttonLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonLogout.Location = new System.Drawing.Point(550, 10);
             this.buttonLogout.Name = "buttonLogout";
             this.buttonLogout.Size = new System.Drawing.Size(75, 23);
             this.buttonLogout.TabIndex = 56;
@@ -241,8 +276,8 @@
             // f_RememberMeCheckBox
             // 
             this.f_RememberMeCheckBox.AutoSize = true;
-            this.f_RememberMeCheckBox.Location = new System.Drawing.Point(17, 42);
-            this.f_RememberMeCheckBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.f_RememberMeCheckBox.Location = new System.Drawing.Point(100, 17);
+            this.f_RememberMeCheckBox.Margin = new System.Windows.Forms.Padding(1);
             this.f_RememberMeCheckBox.Name = "f_RememberMeCheckBox";
             this.f_RememberMeCheckBox.Size = new System.Drawing.Size(94, 17);
             this.f_RememberMeCheckBox.TabIndex = 55;
@@ -252,63 +287,44 @@
             // 
             // f_ProfilePictureBox
             // 
-            this.f_ProfilePictureBox.Location = new System.Drawing.Point(30, 261);
+            this.f_ProfilePictureBox.Location = new System.Drawing.Point(30, 80);
             this.f_ProfilePictureBox.Name = "f_ProfilePictureBox";
             this.f_ProfilePictureBox.Size = new System.Drawing.Size(138, 156);
             this.f_ProfilePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.f_ProfilePictureBox.TabIndex = 41;
             this.f_ProfilePictureBox.TabStop = false;
             // 
-            // f_EventpictureBox
-            // 
-            this.f_EventpictureBox.Location = new System.Drawing.Point(526, 429);
-            this.f_EventpictureBox.Name = "f_EventpictureBox";
-            this.f_EventpictureBox.Size = new System.Drawing.Size(74, 68);
-            this.f_EventpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.f_EventpictureBox.TabIndex = 42;
-            this.f_EventpictureBox.TabStop = false;
-            // 
             // listBoxEvents
             // 
-            this.listBoxEvents.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listBoxEvents.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.listBoxEvents.DisplayMember = "name";
             this.listBoxEvents.FormattingEnabled = true;
-            this.listBoxEvents.Location = new System.Drawing.Point(214, 241);
+            this.listBoxEvents.HorizontalScrollbar = true;
+            this.listBoxEvents.Location = new System.Drawing.Point(19, 400);
+            this.listBoxEvents.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.listBoxEvents.MaximumSize = new System.Drawing.Size(400, 121);
             this.listBoxEvents.Name = "listBoxEvents";
-            this.listBoxEvents.Size = new System.Drawing.Size(280, 147);
+            this.listBoxEvents.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.listBoxEvents.Size = new System.Drawing.Size(400, 121);
             this.listBoxEvents.TabIndex = 40;
             // 
             // f_fetchEventsButton
             // 
+            this.f_fetchEventsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.f_fetchEventsButton.AutoSize = true;
             this.f_fetchEventsButton.LinkArea = new System.Windows.Forms.LinkArea(0, 13);
-            this.f_fetchEventsButton.Location = new System.Drawing.Point(214, 209);
+            this.f_fetchEventsButton.Location = new System.Drawing.Point(19, 385);
             this.f_fetchEventsButton.Name = "f_fetchEventsButton";
-            this.f_fetchEventsButton.Size = new System.Drawing.Size(190, 30);
+            this.f_fetchEventsButton.Size = new System.Drawing.Size(73, 13);
             this.f_fetchEventsButton.TabIndex = 48;
             this.f_fetchEventsButton.TabStop = true;
-            this.f_fetchEventsButton.Text = "Fetch Events \r\n(Click on an event to view it\'s picture)";
-            this.f_fetchEventsButton.UseCompatibleTextRendering = true;
+            this.f_fetchEventsButton.Text = "Fetch Events ";
             this.f_fetchEventsButton.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.f_fetchEventsButton_LinkClicked);
-            // 
-            // listBoxPosts
-            // 
-            this.listBoxPosts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBoxPosts.DisplayMember = "name";
-            this.listBoxPosts.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBoxPosts.FormattingEnabled = true;
-            this.listBoxPosts.ItemHeight = 19;
-            this.listBoxPosts.Location = new System.Drawing.Point(215, 51);
-            this.listBoxPosts.Name = "listBoxPosts";
-            this.listBoxPosts.Size = new System.Drawing.Size(280, 118);
-            this.listBoxPosts.TabIndex = 40;
             // 
             // f_Postbutton
             // 
             this.f_Postbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.f_Postbutton.Location = new System.Drawing.Point(375, 7);
+            this.f_Postbutton.Location = new System.Drawing.Point(382, 227);
             this.f_Postbutton.Name = "f_Postbutton";
             this.f_Postbutton.Size = new System.Drawing.Size(75, 23);
             this.f_Postbutton.TabIndex = 46;
@@ -319,15 +335,16 @@
             // 
             this.f_lastPostStaus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.f_lastPostStaus.Location = new System.Drawing.Point(283, 8);
+            this.f_lastPostStaus.Location = new System.Drawing.Point(283, 227);
             this.f_lastPostStaus.Name = "f_lastPostStaus";
-            this.f_lastPostStaus.Size = new System.Drawing.Size(85, 20);
+            this.f_lastPostStaus.Size = new System.Drawing.Size(92, 20);
             this.f_lastPostStaus.TabIndex = 45;
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(213, 10);
+            this.label3.Location = new System.Drawing.Point(213, 230);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 13);
             this.label3.TabIndex = 44;
@@ -341,17 +358,18 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(657, 421);
+            this.tabControl1.Size = new System.Drawing.Size(664, 561);
             this.tabControl1.TabIndex = 52;
             // 
             // FormAppMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(657, 421);
+            this.ClientSize = new System.Drawing.Size(664, 561);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "FormAppMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormAppMain";
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -359,8 +377,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.cover_smallPictureBox)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.f_ProfilePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.f_EventpictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.f_ProfilePictureBox)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 

@@ -1,4 +1,5 @@
 ﻿using FacebookWrapper.ObjectModel;
+using MRG.Controls.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,11 +13,12 @@ namespace Ex01.ApplicationUI
 {
     public partial class FriendsListForm : Form
     {
-        public FriendsListForm(FacebookObjectCollection<User> friends)
+        public FriendsListForm(FacebookObjectCollection<User> friends, LoadingCircle loadingCircle1)
         {
             InitializeComponent();
             f_FriendsListBox.Items.Clear();
             fillFriends(friends);
+            loadingCircle1.Active = false;
         }
 
         private void fillFriends(FacebookObjectCollection<User> i_Friends)
@@ -67,5 +69,11 @@ namespace Ex01.ApplicationUI
             if (f_FriendsListBox.SelectedItems.Count == 1)
                 displaySelectedFriend(f_FriendsListBox.SelectedItem as User);
         }
+        private void f_PostListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Post post = f_PostListBox.SelectedItem as Post;
+            // need to fill new Form for post
+        }
+
     }
 }

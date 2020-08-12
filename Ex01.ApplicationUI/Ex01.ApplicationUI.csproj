@@ -48,6 +48,12 @@
     <Compile Include="FormAppMain.Designer.cs">
       <DependentUpon>FormAppMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCovid19CheckedIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCovid19CheckedIn.Designer.cs">
+      <DependentUpon>FormCovid19CheckedIn.cs</DependentUpon>
+    </Compile>
     <Compile Include="FriendsListForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAppMain.resx">
       <DependentUpon>FormAppMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCovid19CheckedIn.resx">
+      <DependentUpon>FormCovid19CheckedIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FriendsListForm.resx">
       <DependentUpon>FriendsListForm.cs</DependentUpon>

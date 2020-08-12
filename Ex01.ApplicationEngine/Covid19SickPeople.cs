@@ -60,7 +60,7 @@ namespace Ex01.ApplicationEngine
             {
                 if (confirmedSickLocation.Location.Equals(i_Location.Location))
                 {
-                    if (IsWithInTheRecoveryTime(confirmedSickLocation.DateOfSickConfirmation))
+                    if (IsWithInTheRecoveryTime((DateTime)confirmedSickLocation.DateOfSickConfirmation))
                     {
                         return true;
                     }

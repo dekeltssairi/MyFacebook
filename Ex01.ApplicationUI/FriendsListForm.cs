@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Ex01.ApplicationUI
@@ -47,21 +48,15 @@ namespace Ex01.ApplicationUI
         private void displaySelectedFriendPosts(FacebookObjectCollection<Post> i_friendsPosts)
         {
             f_PostListBox.Items.Clear();
-            foreach (Post post in i_friendsPosts)
+
+            new Thread(() =>
             {
-                if (post.Message != null)
+                foreach (Post post in i_friendsPosts)
                 {
-                    f_PostListBox.Items.Add(post.Message);
+                    f_PostListBox.Items.Add(post);
                 }
-                else if (post.Caption != null)
-                {
-                    f_PostListBox.Items.Add(post.Caption);
-                }
-                else
-                {
-                    f_PostListBox.Items.Add(string.Format("[{0}]", post.Type));
-                }
-            }
+            }).Start();
+            
         }
 
         private void listBoxFriends_SelectedIndexChanged(object sender, EventArgs e)
@@ -72,7 +67,6 @@ namespace Ex01.ApplicationUI
         private void f_PostListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             Post post = f_PostListBox.SelectedItem as Post;
-            // need to fill new Form for post
         }
 
     }

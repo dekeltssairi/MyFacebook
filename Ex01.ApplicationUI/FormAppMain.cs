@@ -11,7 +11,7 @@ namespace Ex01.ApplicationUI
     {
         private readonly Engine r_AppEngine = new Engine();
         private readonly ApplicationSettings r_AppSettings = ApplicationSettings.LoadFromFile();
-
+        
 
         public FormAppMain()
         {
@@ -246,9 +246,35 @@ namespace Ex01.ApplicationUI
             }
             else
             {
-
+                fetchEvents();
             }
-            fetchEvents();
+            
+        }
+
+        private void buttonMostDiggingFriend_Click(object sender, EventArgs e)
+        {
+            DateTime lastYear = DateTime.Today.AddYears(-1);
+            User mostDiggingFriend = null;
+            int maxNumOfPosts = 0;
+            int numOfLastYearFriendPost; 
+            foreach(User friend in r_AppEngine.Connection.LoggedUser.Friends)
+            {
+                numOfLastYearFriendPost = 0;
+                foreach (Post post in friend.Posts)
+                {
+                    if (post.CreatedTime > lastYear)
+                    {
+                        numOfLastYearFriendPost++;
+                    }
+                }
+                if (numOfLastYearFriendPost > maxNumOfPosts)
+                {
+                    maxNumOfPosts = numOfLastYearFriendPost;
+                    mostDiggingFriend = friend;
+                }
+            }
+
+            MessageBox.Show(string.Format("Most Digging Friend is {0}. He post {1} posts last year", mostDiggingFriend.Name, maxNumOfPosts.ToString()));
         }
     }
 }

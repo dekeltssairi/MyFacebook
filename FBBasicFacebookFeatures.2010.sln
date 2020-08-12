@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.645
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FBBasicFacebookFeatures.2010", "FBBasicFacebookFeatures\FBBasicFacebookFeatures.2010.csproj", "{AF90A25E-B4FB-434C-9260-C02B56C2AA9D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex01.ApplicationUI", "Ex01.ApplicationUI\Ex01.ApplicationUI.csproj", "{F04F0350-6264-48C0-BB8E-575E436C5920}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex01.ApplicationEngine", "Ex01.ApplicationEngine\Ex01.ApplicationEngine.csproj", "{938365D6-7848-46FE-8A6C-950AA1A8C5A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MRG.Controls.UI", "MRG.Controls.UI\MRG.Controls.UI.csproj", "{48E18B56-4C37-4D69-ABA7-429C42B45AAC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{938365D6-7848-46FE-8A6C-950AA1A8C5A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{938365D6-7848-46FE-8A6C-950AA1A8C5A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{938365D6-7848-46FE-8A6C-950AA1A8C5A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48E18B56-4C37-4D69-ABA7-429C42B45AAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48E18B56-4C37-4D69-ABA7-429C42B45AAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48E18B56-4C37-4D69-ABA7-429C42B45AAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48E18B56-4C37-4D69-ABA7-429C42B45AAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

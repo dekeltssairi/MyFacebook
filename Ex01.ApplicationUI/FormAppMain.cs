@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
 using Ex01.ApplicationEngine;
-
+using System.Threading;
 
 namespace Ex01.ApplicationUI
 {
@@ -56,14 +56,14 @@ namespace Ex01.ApplicationUI
             enableButtons();
             r_AppEngine.Connection.LoggedUser = r_AppEngine.Connection.LoginResult.LoggedInUser;
             f_ProfilePictureBox.Load(r_AppEngine.Connection.LoggedUser.PictureNormalURL);
-            foreach(Album album in r_AppEngine.Connection.LoggedUser.Albums)
+            foreach (Album album in r_AppEngine.Connection.LoggedUser.Albums)
             {
                 if (album.Name == "Cover Photos")
                 {
                     cover_smallPictureBox.Load(album.PictureThumbURL);
                 }
             }
-            
+
             f_UserWellcome.Text = string.Format("Hello, {0}", r_AppEngine.Connection.LoggedUser.Name);
             getLastPostByUser();
         }
@@ -114,7 +114,7 @@ namespace Ex01.ApplicationUI
                     else if (latestPost.Type.Value == Post.eType.photo)
                     {
                         f_EventpictureBox.Visible = true;
-                        f_EventpictureBox .LoadAsync(latestPost.PictureURL);
+                        f_EventpictureBox.LoadAsync(latestPost.PictureURL);
                     }
                 }
             }
@@ -173,21 +173,35 @@ namespace Ex01.ApplicationUI
 
         private void f_ShowFriendsButton_Click(object sender, EventArgs e)
         {
-            ListBox listBoxFriends = new ListBox();
-
-            if (r_AppEngine.Connection.LoggedUser.Friends.Count == 0)
+            loadingCircle1.Active = true;
+            if (r_AppEngine.Connection.LoggedUser == null)
+            {
+                MessageBox.Show("You must loggin first!");
+                loadingCircle1.Active = false;
+            }
+            else if (r_AppEngine.Connection.LoggedUser.Friends.Count == 0)
             {
                 MessageBox.Show("No Friends to retrieve :(");
+                loadingCircle1.Active = false;
             }
             else
             {
-                new FriendsListForm(r_AppEngine.Connection.LoggedUser.Friends).ShowDialog();
+                new Thread(onFriendListThread).Start();
             }
+
         }
 
+        private void onFriendListThread()
+        {
+            new FriendsListForm(r_AppEngine.Connection.LoggedUser.Friends, loadingCircle1).ShowDialog();
+        }
         private void f_CheckinsButton_Click(object sender, EventArgs e)
         {
-            if (r_AppEngine.Connection.LoggedUser.Checkins.Count == 0)
+            if (r_AppEngine.Connection.LoggedUser == null)
+            {
+                MessageBox.Show("You must loggin first!");
+            }
+            else if (r_AppEngine.Connection.LoggedUser.Checkins.Count == 0)
             {
                 MessageBox.Show("No Checkins to retrieve :(");
             }
@@ -199,26 +213,41 @@ namespace Ex01.ApplicationUI
 
         private void linkPosts_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            fetchPosts();
+            if (r_AppEngine.Connection.LoggedUser != null)
+            {
+                listBoxPosts.Items.Clear();
+                fetchPosts();
+            }
+            else
+            {
+                MessageBox.Show("You must loggin first!");
+            }
         }
 
         private void fetchEvents()
         {
-            listBoxEvents.Items.Clear();
             listBoxEvents.DisplayMember = "Name";
             foreach (Event fbEvent in r_AppEngine.Connection.LoggedUser.Events)
             {
                 listBoxEvents.Items.Add(fbEvent);
             }
 
-            if (r_AppEngine.Connection.LoggedUser.Events.Count == 0)
-            {
-                MessageBox.Show("No Events to retrieve :(");
-            }
         }
 
         private void f_fetchEventsButton_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            if (r_AppEngine.Connection.LoggedUser == null)
+            {
+                MessageBox.Show("You must loggin first!");
+            }
+            else if (r_AppEngine.Connection.LoggedUser.Events.Count == 0)
+            {
+                MessageBox.Show("No Events to retrieve :(");
+            }
+            else
+            {
+
+            }
             fetchEvents();
         }
     }

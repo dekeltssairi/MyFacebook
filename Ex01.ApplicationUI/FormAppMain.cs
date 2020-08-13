@@ -15,9 +15,10 @@ namespace Ex01.ApplicationUI
 
         public FormAppMain()
         {
+
             InitializeComponent();
+            this.Size = new System.Drawing.Size(1200, 800);
             r_AppEngine.Connection = new FBConnector();
-            applyAppSettings();
         }
 
         private void applyAppSettings()
@@ -56,14 +57,15 @@ namespace Ex01.ApplicationUI
             enableButtons();
             r_AppEngine.Connection.LoggedUser = r_AppEngine.Connection.LoginResult.LoggedInUser;
             f_ProfilePictureBox.Load(r_AppEngine.Connection.LoggedUser.PictureNormalURL);
-            
-            foreach (Album album in r_AppEngine.Connection.LoggedUser.Albums)
+            helloUserLabel.Text = string.Format("Welcome {0}!", r_AppEngine.Connection.LoggedUser.Name);
+            helloUserLabel.Visible = true;
+/*            foreach (Album album in r_AppEngine.Connection.LoggedUser.Albums)
             {
                 if (album.Name == "Cover photos")
                 {
                     cover_smallPictureBox.Load(album.PictureThumbURL);
                 }
-            }
+            }*/
 
             f_UserWellcome.Text = string.Format("Hello, {0}", r_AppEngine.Connection.LoggedUser.Name);
             getLastPostByUser();
@@ -143,15 +145,15 @@ namespace Ex01.ApplicationUI
             {
                 if (post.Message != null)
                 {
-                    listBoxPosts.Items.Add(post.Message);
+                    listBox1.Items.Add(post.Message);
                 }
                 else if (post.Caption != null)
                 {
-                    listBoxPosts.Items.Add(post.Caption);
+                    listBox1.Items.Add(post.Caption);
                 }
                 else
                 {
-                    listBoxPosts.Items.Add(string.Format("[{0}]", post.Type));
+                    listBox1.Items.Add(string.Format("[{0}]", post.Type));
                 }
             }
 
@@ -174,16 +176,16 @@ namespace Ex01.ApplicationUI
 
         private void f_ShowFriendsButton_Click(object sender, EventArgs e)
         {
-            loadingCircle1.Active = true;
+            
             if (r_AppEngine.Connection.LoggedUser == null)
             {
                 MessageBox.Show("You must loggin first!");
-                loadingCircle1.Active = false;
+                
             }
             else if (r_AppEngine.Connection.LoggedUser.Friends.Count == 0)
             {
                 MessageBox.Show("No Friends to retrieve :(");
-                loadingCircle1.Active = false;
+                
             }
             else
             {
@@ -194,7 +196,7 @@ namespace Ex01.ApplicationUI
 
         private void onFriendListThread()
         {
-            new FriendsListForm(r_AppEngine.Connection.LoggedUser.Friends, loadingCircle1).ShowDialog();
+            new FriendsListForm(r_AppEngine.Connection.LoggedUser.Friends).ShowDialog();
         }
         private void f_CheckinsButton_Click(object sender, EventArgs e)
         {
@@ -212,19 +214,6 @@ namespace Ex01.ApplicationUI
             }
         }
 
-        private void linkPosts_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            if (r_AppEngine.Connection.LoggedUser != null)
-            {
-                listBoxPosts.Items.Clear();
-                fetchPosts();
-            }
-            else
-            {
-                MessageBox.Show("You must loggin first!");
-            }
-        }
-
         private void fetchEvents()
         {
             listBoxEvents.DisplayMember = "Name";
@@ -234,24 +223,6 @@ namespace Ex01.ApplicationUI
             }
 
         }
-
-        private void f_fetchEventsButton_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            if (r_AppEngine.Connection.LoggedUser == null)
-            {
-                MessageBox.Show("You must loggin first!");
-            }
-            else if (r_AppEngine.Connection.LoggedUser.Events.Count == 0)
-            {
-                MessageBox.Show("No Events to retrieve :(");
-            }
-            else
-            {
-                fetchEvents();
-            }
-            
-        }
-
         private void buttonMostDiggingFriend_Click(object sender, EventArgs e)
         {
             DateTime lastYear = DateTime.Today.AddYears(-1);
@@ -288,11 +259,6 @@ namespace Ex01.ApplicationUI
 
         }
 
-        private void comboBoxActionType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Covid19_button_Click(object sender, EventArgs e)
         {
             if (r_AppEngine.Connection.LoggedUser == null)
@@ -302,6 +268,35 @@ namespace Ex01.ApplicationUI
             else
             {
                 new FormCovid19CheckedIn(r_AppEngine).ShowDialog();
+            }
+        }
+
+        private void buttonShowMyPost_Click(object sender, EventArgs e)
+        {
+            if (r_AppEngine.Connection.LoggedUser != null)
+            {
+                listBox1.Items.Clear();
+                fetchPosts();
+            }
+            else
+            {
+                MessageBox.Show("You must loggin first!");
+            }
+        }
+
+        private void buttonShowMyEvents_Click(object sender, EventArgs e)
+        {
+            if (r_AppEngine.Connection.LoggedUser == null)
+            {
+                MessageBox.Show("You must loggin first!");
+            }
+            else if (r_AppEngine.Connection.LoggedUser.Events.Count == 0)
+            {
+                MessageBox.Show("No Events to retrieve :(");
+            }
+            else
+            {
+                fetchEvents();
             }
         }
     }

@@ -14,12 +14,11 @@ namespace Ex01.ApplicationUI
 {
     public partial class FriendsListForm : Form
     {
-        public FriendsListForm(FacebookObjectCollection<User> friends, LoadingCircle loadingCircle1)
+        public FriendsListForm(FacebookObjectCollection<User> friends)
         {
             InitializeComponent();
             f_FriendsListBox.Items.Clear();
             fillFriends(friends);
-            loadingCircle1.Active = false;
         }
 
         private void fillFriends(FacebookObjectCollection<User> i_Friends)

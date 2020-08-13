@@ -28,10 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBoxActionType = new System.Windows.Forms.ComboBox();
-            this.linkUserActions = new System.Windows.Forms.LinkLabel();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridViewActions = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.buttonMostDiggingFriend = new System.Windows.Forms.Button();
@@ -53,8 +49,6 @@
             this.f_lastPostStaus = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cover_smallPictureBox = new System.Windows.Forms.PictureBox();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActions)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.f_EventpictureBox)).BeginInit();
@@ -62,81 +56,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.cover_smallPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBoxActionType
-            // 
-            this.comboBoxActionType.FormattingEnabled = true;
-            this.comboBoxActionType.Items.AddRange(new object[] {
-            "music",
-            "television",
-            "movies",
-            "books",
-            "books.reads",
-            "books.wants_to_read",
-            "books.rates",
-            "books.quotes",
-            "fitness.runs",
-            "fitness.walks",
-            "fitness.bikes",
-            "music.listens",
-            "music.playlists",
-            "news.reads",
-            "news.publishes",
-            "video.watches",
-            "video.rates",
-            "videos.wants_to_watch"});
-            this.comboBoxActionType.Location = new System.Drawing.Point(160, 9);
-            this.comboBoxActionType.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBoxActionType.Name = "comboBoxActionType";
-            this.comboBoxActionType.Size = new System.Drawing.Size(219, 24);
-            this.comboBoxActionType.TabIndex = 23;
-            this.comboBoxActionType.SelectedIndexChanged += new System.EventHandler(this.comboBoxActionType_SelectedIndexChanged);
-            // 
-            // linkUserActions
-            // 
-            this.linkUserActions.AutoSize = true;
-            this.linkUserActions.Location = new System.Drawing.Point(12, 12);
-            this.linkUserActions.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.linkUserActions.Name = "linkUserActions";
-            this.linkUserActions.Size = new System.Drawing.Size(127, 17);
-            this.linkUserActions.TabIndex = 14;
-            this.linkUserActions.TabStop = true;
-            this.linkUserActions.Text = "Fetch User Actions";
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.comboBoxActionType);
-            this.tabPage2.Controls.Add(this.dataGridViewActions);
-            this.tabPage2.Controls.Add(this.linkUserActions);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(1376, 764);
-            this.tabPage2.TabIndex = 2;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // dataGridViewActions
-            // 
-            this.dataGridViewActions.AllowUserToAddRows = false;
-            this.dataGridViewActions.AllowUserToDeleteRows = false;
-            this.dataGridViewActions.AllowUserToOrderColumns = true;
-            this.dataGridViewActions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewActions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewActions.Location = new System.Drawing.Point(15, 41);
-            this.dataGridViewActions.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridViewActions.Name = "dataGridViewActions";
-            this.dataGridViewActions.ReadOnly = true;
-            this.dataGridViewActions.RowHeadersWidth = 51;
-            this.dataGridViewActions.Size = new System.Drawing.Size(1097, 875);
-            this.dataGridViewActions.TabIndex = 22;
-            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
@@ -299,7 +221,7 @@
             // f_RememberMeCheckBox
             // 
             this.f_RememberMeCheckBox.AutoSize = true;
-            this.f_RememberMeCheckBox.Location = new System.Drawing.Point(133, 21);
+            this.f_RememberMeCheckBox.Location = new System.Drawing.Point(134, 21);
             this.f_RememberMeCheckBox.Margin = new System.Windows.Forms.Padding(1);
             this.f_RememberMeCheckBox.Name = "f_RememberMeCheckBox";
             this.f_RememberMeCheckBox.Size = new System.Drawing.Size(122, 21);
@@ -423,9 +345,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormAppMain";
             this.Load += new System.EventHandler(this.FormAppMain_Load);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActions)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -437,11 +356,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox comboBoxActionType;
-        private System.Windows.Forms.LinkLabel linkUserActions;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataGridView dataGridViewActions;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button buttonMostDiggingFriend;

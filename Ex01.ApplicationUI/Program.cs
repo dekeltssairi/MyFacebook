@@ -21,7 +21,7 @@ namespace BasicFacebookFeatures
             Application.SetCompatibleTextRenderingDefault(false);
 
             
-            Application.Run(new FormAppMain());
+            Application.Run(new Form1());
         }
     }
 }

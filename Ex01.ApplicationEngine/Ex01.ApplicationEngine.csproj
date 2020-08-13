@@ -46,6 +46,7 @@
     <Compile Include="Covid19SickPeople.cs" />
     <Compile Include="Engine.cs" />
     <Compile Include="FBConnector.cs" />
+    <Compile Include="Utilities.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Facebook">

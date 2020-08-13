@@ -51,6 +51,7 @@
             this.Locations_listBox.Name = "Locations_listBox";
             this.Locations_listBox.Size = new System.Drawing.Size(1236, 407);
             this.Locations_listBox.TabIndex = 0;
+            this.Locations_listBox.SelectedIndexChanged += new System.EventHandler(this.Locations_listBox_SelectedIndexChanged);
             // 
             // MyCheckins_button
             // 
@@ -137,7 +138,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(883, 670);
+            this.label3.Location = new System.Drawing.Point(356, 995);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(104, 32);
             this.label3.TabIndex = 10;
@@ -146,11 +147,10 @@
             // ResultStatus_label
             // 
             this.ResultStatus_label.AutoSize = true;
-            this.ResultStatus_label.Location = new System.Drawing.Point(894, 746);
+            this.ResultStatus_label.Location = new System.Drawing.Point(477, 995);
             this.ResultStatus_label.Name = "ResultStatus_label";
-            this.ResultStatus_label.Size = new System.Drawing.Size(93, 32);
+            this.ResultStatus_label.Size = new System.Drawing.Size(0, 32);
             this.ResultStatus_label.TabIndex = 11;
-            this.ResultStatus_label.Text = "label4";
             // 
             // Friends_listBox
             // 
@@ -160,12 +160,13 @@
             this.Friends_listBox.Name = "Friends_listBox";
             this.Friends_listBox.Size = new System.Drawing.Size(276, 345);
             this.Friends_listBox.TabIndex = 12;
+            this.Friends_listBox.SelectedIndexChanged += new System.EventHandler(this.Friends_listBox_SelectedIndexChanged);
             // 
             // FormCovid19CheckedIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1391, 1094);
+            this.ClientSize = new System.Drawing.Size(1343, 1242);
             this.Controls.Add(this.Friends_listBox);
             this.Controls.Add(this.ResultStatus_label);
             this.Controls.Add(this.label3);
@@ -179,6 +180,7 @@
             this.Controls.Add(this.CheckUserLocation_button);
             this.Controls.Add(this.MyCheckins_button);
             this.Controls.Add(this.Locations_listBox);
+            this.Location = new System.Drawing.Point(50, 50);
             this.Name = "FormCovid19CheckedIn";
             this.Text = "FormCovid19CheckedIn";
             this.ResumeLayout(false);

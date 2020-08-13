@@ -69,5 +69,9 @@ namespace Ex01.ApplicationUI
             Post post = (Post)sender;
         }
 
+        private void f_PostListBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

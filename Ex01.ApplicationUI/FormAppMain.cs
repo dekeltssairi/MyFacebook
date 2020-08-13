@@ -82,8 +82,8 @@ namespace Ex01.ApplicationUI
         {
             base.OnFormClosing(e);
 
-            r_AppSettings.LastWindowLocation = this.Location;
-            r_AppSettings.LastWindowSize = this.Size;
+            r_AppSettings.LastWindowLocation = Location;
+            r_AppSettings.LastWindowSize = Size;
             r_AppSettings.RememberUser = f_RememberMeCheckBox.Checked;
             if (r_AppSettings.RememberUser == true)
             {
@@ -291,6 +291,18 @@ namespace Ex01.ApplicationUI
         private void comboBoxActionType_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Covid19_button_Click(object sender, EventArgs e)
+        {
+            if (r_AppEngine.Connection.LoggedUser == null)
+            {
+                MessageBox.Show("You must loggin first!");
+            }
+            else
+            {
+                new FormCovid19CheckedIn(r_AppEngine).ShowDialog();
+            }
         }
     }
 }

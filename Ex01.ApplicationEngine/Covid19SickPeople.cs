@@ -50,8 +50,10 @@ namespace Ex01.ApplicationEngine
 
         public void AddConfirmedLocationTotheList(ConfirmedSickLocation i_confirmedSickLocation)
         {
-            ConfirmedSickLocations.Add(i_confirmedSickLocation);
-           
+            if (!ConfirmedSickLocations.Any(location => location == i_confirmedSickLocation))
+            {
+                ConfirmedSickLocations.Add(i_confirmedSickLocation);
+            }
         }
 
         public bool CheckIfLocationIsInTheList(ConfirmedSickLocation i_Location)

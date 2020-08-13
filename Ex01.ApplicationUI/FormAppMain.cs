@@ -56,9 +56,10 @@ namespace Ex01.ApplicationUI
             enableButtons();
             r_AppEngine.Connection.LoggedUser = r_AppEngine.Connection.LoginResult.LoggedInUser;
             f_ProfilePictureBox.Load(r_AppEngine.Connection.LoggedUser.PictureNormalURL);
+            
             foreach (Album album in r_AppEngine.Connection.LoggedUser.Albums)
             {
-                if (album.Name == "Cover Photos")
+                if (album.Name == "Cover photos")
                 {
                     cover_smallPictureBox.Load(album.PictureThumbURL);
                 }
@@ -275,6 +276,21 @@ namespace Ex01.ApplicationUI
             }
 
             MessageBox.Show(string.Format("Most Digging Friend is {0}. He post {1} posts last year", mostDiggingFriend.Name, maxNumOfPosts.ToString()));
+        }
+
+        private void FormAppMain_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void f_Postbutton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxActionType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -72,7 +72,6 @@ namespace Ex01.ApplicationUI
             this.f_PostListBox.Size = new System.Drawing.Size(709, 148);
             this.f_PostListBox.TabIndex = 2;
             this.f_PostListBox.UseWaitCursor = true;
-            this.f_PostListBox.SelectedIndexChanged += new System.EventHandler(this.f_PostListBox_SelectedIndexChanged);
             // 
             // FriendsListForm
             // 

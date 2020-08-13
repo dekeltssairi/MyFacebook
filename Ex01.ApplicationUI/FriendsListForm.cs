@@ -66,7 +66,7 @@ namespace Ex01.ApplicationUI
         }
         private void f_PostListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Post post = f_PostListBox.SelectedItem as Post;
+            Post post = (Post)sender;
         }
 
     }

@@ -32,6 +32,17 @@ namespace Ex01.ApplicationEngine
         {
             // load default locations
             ConfirmedSickLocations = new List<ConfirmedSickLocation>();
+            loadDefault();
+            
+        }
+
+        private void loadDefault()
+        {
+            ConfirmedSickLocation defaultLocation = new ConfirmedSickLocation();
+            defaultLocation.Location = "האקדמית תא יפו";
+            defaultLocation.DateOfSickConfirmation = new DateTime(2020, 04, 03, 10, 30, 0);
+
+            ConfirmedSickLocations.Add(defaultLocation);
         }
 
         public void SaveToFile()

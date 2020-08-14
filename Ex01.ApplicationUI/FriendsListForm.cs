@@ -47,14 +47,11 @@ namespace Ex01.ApplicationUI
         private void displaySelectedFriendPosts(FacebookObjectCollection<Post> i_friendsPosts)
         {
             f_PostListBox.Items.Clear();
-
-            new Thread(() =>
-            {
-                foreach (Post post in i_friendsPosts)
+           foreach (Post post in i_friendsPosts)
                 {
                     f_PostListBox.Items.Add(post);
                 }
-            }).Start();
+           
             
         }
 

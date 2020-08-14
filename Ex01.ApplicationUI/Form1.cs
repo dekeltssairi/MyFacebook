@@ -255,6 +255,7 @@ namespace Ex01.ApplicationUI
                     }
                 }
 
+                new FormMosiftDiggingFriend(mostDiggingFriend, f_ProfilePictureBox, maxNumOfPosts).ShowDialog();
                 MessageBox.Show(string.Format("Most Digging Friend is {0}. He post {1} posts last year", mostDiggingFriend.Name, maxNumOfPosts.ToString()));
             }
 

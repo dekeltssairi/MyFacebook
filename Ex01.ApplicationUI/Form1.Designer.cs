@@ -113,7 +113,7 @@
             // 
             // buttonShowMyEvents
             // 
-            this.buttonShowMyEvents.Location = new System.Drawing.Point(0, 572);
+            this.buttonShowMyEvents.Location = new System.Drawing.Point(12, 572);
             this.buttonShowMyEvents.Name = "buttonShowMyEvents";
             this.buttonShowMyEvents.Size = new System.Drawing.Size(253, 23);
             this.buttonShowMyEvents.TabIndex = 92;
@@ -123,7 +123,7 @@
             // 
             // buttonShowMyPost
             // 
-            this.buttonShowMyPost.Location = new System.Drawing.Point(0, 421);
+            this.buttonShowMyPost.Location = new System.Drawing.Point(10, 421);
             this.buttonShowMyPost.Name = "buttonShowMyPost";
             this.buttonShowMyPost.Size = new System.Drawing.Size(253, 23);
             this.buttonShowMyPost.TabIndex = 91;
@@ -134,7 +134,7 @@
             // helloUserLabel
             // 
             this.helloUserLabel.AutoSize = true;
-            this.helloUserLabel.Location = new System.Drawing.Point(7, 130);
+            this.helloUserLabel.Location = new System.Drawing.Point(9, 132);
             this.helloUserLabel.Name = "helloUserLabel";
             this.helloUserLabel.Size = new System.Drawing.Size(70, 17);
             this.helloUserLabel.TabIndex = 90;
@@ -146,7 +146,7 @@
             // 
             this.listBoxEvents.FormattingEnabled = true;
             this.listBoxEvents.ItemHeight = 16;
-            this.listBoxEvents.Location = new System.Drawing.Point(3, 601);
+            this.listBoxEvents.Location = new System.Drawing.Point(15, 601);
             this.listBoxEvents.Name = "listBoxEvents";
             this.listBoxEvents.Size = new System.Drawing.Size(250, 116);
             this.listBoxEvents.TabIndex = 89;
@@ -156,14 +156,14 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.HorizontalScrollbar = true;
             this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(-16, 450);
+            this.listBox1.Location = new System.Drawing.Point(10, 450);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(269, 116);
+            this.listBox1.Size = new System.Drawing.Size(255, 116);
             this.listBox1.TabIndex = 88;
             // 
             // f_EventpictureBox
             // 
-            this.f_EventpictureBox.Location = new System.Drawing.Point(4, 171);
+            this.f_EventpictureBox.Location = new System.Drawing.Point(12, 171);
             this.f_EventpictureBox.Name = "f_EventpictureBox";
             this.f_EventpictureBox.Size = new System.Drawing.Size(178, 50);
             this.f_EventpictureBox.TabIndex = 87;
@@ -183,7 +183,7 @@
             // f_RememberMeCheckBox
             // 
             this.f_RememberMeCheckBox.AutoSize = true;
-            this.f_RememberMeCheckBox.Location = new System.Drawing.Point(10, 61);
+            this.f_RememberMeCheckBox.Location = new System.Drawing.Point(12, 84);
             this.f_RememberMeCheckBox.Margin = new System.Windows.Forms.Padding(1);
             this.f_RememberMeCheckBox.Name = "f_RememberMeCheckBox";
             this.f_RememberMeCheckBox.Size = new System.Drawing.Size(122, 21);
@@ -194,7 +194,7 @@
             // 
             // f_ProfilePictureBox
             // 
-            this.f_ProfilePictureBox.Location = new System.Drawing.Point(4, 228);
+            this.f_ProfilePictureBox.Location = new System.Drawing.Point(12, 228);
             this.f_ProfilePictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.f_ProfilePictureBox.Name = "f_ProfilePictureBox";
             this.f_ProfilePictureBox.Size = new System.Drawing.Size(178, 172);

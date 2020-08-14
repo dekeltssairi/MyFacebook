@@ -48,6 +48,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMosiftDiggingFriend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMosiftDiggingFriend.Designer.cs">
+      <DependentUpon>FormMosiftDiggingFriend.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCovid19CheckedIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormMosiftDiggingFriend.resx">
+      <DependentUpon>FormMosiftDiggingFriend.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCovid19CheckedIn.resx">
       <DependentUpon>FormCovid19CheckedIn.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,6 +135,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-חופר-ציור_csp27622896.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-spade-100.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

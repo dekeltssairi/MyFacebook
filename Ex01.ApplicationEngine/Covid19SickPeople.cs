@@ -10,7 +10,7 @@ namespace Ex01.ApplicationEngine
     public class Covid19SickPeople
     {
         private const string k_SickPeopleFileSuffix = @"\\Covid19SickPeople.xml";
-        public List<ConfirmedSickLocation> ConfirmedSickLocations { get; set;}
+        public List<ConfirmedSickLocation> ConfirmedSickLocations { get; set; }
 
         public static Covid19SickPeople LoadFromFile()
         {
@@ -50,7 +50,8 @@ namespace Ex01.ApplicationEngine
 
         public void AddConfirmedLocationTotheList(ConfirmedSickLocation i_confirmedSickLocation)
         {
-            if (!ConfirmedSickLocations.Any(location => location == i_confirmedSickLocation))
+            // if (!ConfirmedSickLocations.Any(location => location == i_confirmedSickLocation))
+            if(!CheckIfLocationIsInTheList(i_confirmedSickLocation) == true)
             {
                 ConfirmedSickLocations.Add(i_confirmedSickLocation);
             }
@@ -60,9 +61,9 @@ namespace Ex01.ApplicationEngine
         {
             foreach(ConfirmedSickLocation confirmedSickLocation in ConfirmedSickLocations)
             {
-                if (confirmedSickLocation.Location.Equals(i_Location.Location))
+                if (confirmedSickLocation.Location == i_Location.Location)
                 {
-                    if (IsWithInTheRecoveryTime((DateTime)confirmedSickLocation.DateOfSickConfirmation))
+                    if (IsWithInTheRecoveryTime(confirmedSickLocation.DateOfSickConfirmation))
                     {
                         return true;
                     }

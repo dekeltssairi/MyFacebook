@@ -66,13 +66,6 @@ namespace Ex01.ApplicationUI
             f_ProfilePictureBox.Load(r_AppEngine.Connection.LoggedUser.PictureNormalURL);
             helloUserLabel.Text = string.Format("Welcome {0}!", r_AppEngine.Connection.LoggedUser.Name);
             helloUserLabel.Visible = true;
-            /*            foreach (Album album in r_AppEngine.Connection.LoggedUser.Albums)
-                        {
-                            if (album.Name == "Cover photos")
-                            {
-                                cover_smallPictureBox.Load(album.PictureThumbURL);
-                            }
-                        }*/
 
            
             getLastPostByUser();

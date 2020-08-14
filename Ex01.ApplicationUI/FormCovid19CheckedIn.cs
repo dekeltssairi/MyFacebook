@@ -17,62 +17,150 @@ namespace Ex01.ApplicationUI
     {
         private readonly Engine r_engine;
         private Covid19SickPeople ConfirmedSickPeople = Covid19SickPeople.LoadFromFile();
-        private ConfirmedSickLocation LocationInput = new ConfirmedSickLocation();
 
         public FormCovid19CheckedIn(Engine i_Engine)
         {
             r_engine = i_Engine;
             InitializeComponent();
-
+            FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         private void AddConfirmedSickLocation_button_Click(object sender, EventArgs e)
         {
-            LocationInput.DateOfSickConfirmation = LocationTimeToCheck_dateTimePicker.Value;
-            LocationInput.Location = LocationDescription_textBox.Text;
-            ConfirmedSickPeople.AddConfirmedLocationTotheList(LocationInput);
+            ResultStatus_label.Text = " ";
+            try
+            {
+                ConfirmedSickLocation LocationInput = getSelectedLocationAndDateTime();
+                ConfirmedSickPeople.AddConfirmedLocationTotheList(LocationInput);
+            }
+            catch (Exception AddConfirmedSickLocation)
+            {
+                MessageBox.Show(AddConfirmedSickLocation.Message);
+            }
 
-            LocationDescription_textBox.Clear();
+            clearLocationDateTimeSelectingFields();
         }
 
         private void CheckUserLocation_button_Click(object sender, EventArgs e)
         {
-            LocationInput.DateOfSickConfirmation = LocationTimeToCheck_dateTimePicker.Value;
-            LocationInput.Location = LocationDescription_textBox.Text;
-            if (ConfirmedSickPeople.CheckIfLocationIsInTheList(LocationInput))
+            ResultStatus_label.Text = " ";
+            try
             {
-                ResultStatus_label.Text = Utilities.Constants.NegaiveMessage;
+                ConfirmedSickLocation LocationInput = getSelectedLocationAndDateTime();
+                if (ConfirmedSickPeople.CheckIfLocationIsInTheList(LocationInput))
+                {
+                    ResultStatus_label.Text = Utilities.Constants.NegaiveMessage;
+                }
+                else
+                {
+                    ResultStatus_label.Text = Utilities.Constants.NegaiveMessage;
+                }
+            }
+            catch (Exception CheckUserLocationError)
+            {
+                MessageBox.Show(CheckUserLocationError.Message);
+            }
+
+            clearLocationDateTimeSelectingFields();
+        }
+
+        private void clearLocationDateTimeSelectingFields()
+        {
+            Hour_textBox.Clear();
+            Minute_textBox.Clear();
+            Second_TextBox.Clear();
+            LocationTimeToCheck_dateTimePicker.Value = DateTime.Now;
+            LocationDescription_textBox.Clear();
+
+        }
+
+        private ConfirmedSickLocation getSelectedLocationAndDateTime()
+        {
+            ConfirmedSickLocation confirmedSickLocation = new ConfirmedSickLocation();
+            DateTime SelectedDateTime;
+            try
+            {
+                SelectedDateTime = createSeletedDateTime(Hour_textBox.Text, Minute_textBox.Text, Second_TextBox.Text);
+                if (LocationDescription_textBox.Text == "")
+                {
+                    throw new Exception("Location Description is empty");
+                }
+            }
+            catch (Exception createSelectedDateTimeError)
+            {
+                clearLocationDateTimeSelectingFields();
+                throw createSelectedDateTimeError;
+            }
+
+            confirmedSickLocation.Location = LocationDescription_textBox.Text;
+            confirmedSickLocation.DateOfSickConfirmation = SelectedDateTime;
+
+
+
+            return confirmedSickLocation;
+        }
+
+        private DateTime createSeletedDateTime(string i_Hour, string i_Minute, string i_Second)
+        {
+            int HourAsInt, MinuteAsInt, SecondsAsInt;
+            int Day, Month, Year;
+            try
+            {
+                bool isHourValid = Utilities.inputValidation(i_Hour, out HourAsInt, 2, 24, "Hour");
+                bool isMinuteVaild = Utilities.inputValidation(i_Minute, out MinuteAsInt, 2, 60, "Minute");
+                bool isSecondsVaild = Utilities.inputValidation(i_Second, out SecondsAsInt, 2, 60, "Second");
+            }
+            catch (Exception TimeError)
+            {
+                throw TimeError;
+            }
+
+            if(LocationTimeToCheck_dateTimePicker.Value != null)
+            {
+                if (LocationTimeToCheck_dateTimePicker.Value > DateTime.Now)
+                {
+                    throw new Exception("Selected Date canot be in the future");
+                }
+                Day = LocationTimeToCheck_dateTimePicker.Value.Day;
+                Month = LocationTimeToCheck_dateTimePicker.Value.Month;
+                Year = LocationTimeToCheck_dateTimePicker.Value.Year;
             }
             else
             {
-                ResultStatus_label.Text = Utilities.Constants.NegaiveMessage;
+                throw new Exception("Date is not selected");
             }
 
-            LocationDescription_textBox.Clear();
+            return new DateTime(Year, Month, Day, HourAsInt, MinuteAsInt, SecondsAsInt);
+
         }
+
+       
 
         private void MyCheckins_button_Click(object sender, EventArgs e)
         {
+            ResultStatus_label.Text = " ";
             AddToLocationsList();
         }
 
         private void LoadSickList_button_Click(object sender, EventArgs e)
         {
-            Locations_listBox.Items.Clear();
+            ResultStatus_label.Text = " ";
+            ConfirmedSickLocations_listBox.Items.Clear();
             foreach (ConfirmedSickLocation confirmedSickLocation in ConfirmedSickPeople.ConfirmedSickLocations)
             {
-                Locations_listBox.Items.Add(string.Format("{0},{1}", confirmedSickLocation.Location, confirmedSickLocation.DateOfSickConfirmation));
+                ConfirmedSickLocations_listBox.Items.Add(string.Format("{0},{1}", confirmedSickLocation.Location, confirmedSickLocation.DateOfSickConfirmation));
             }
         }
 
         private void CheckMyCheckins_button_Click(object sender, EventArgs e)
         {
             FacebookObjectCollection<Checkin> checkins = r_engine.Connection.LoggedUser.Checkins;
+            ConfirmedSickLocation LocationInput = new ConfirmedSickLocation();
             bool result = false;
             foreach (Checkin checkin in checkins)
             {
-                LocationInput.DateOfSickConfirmation = checkin.CreatedTime;
-                LocationInput.Location = checkin.Name;
+                LocationInput.DateOfSickConfirmation = checkin.CreatedTime ?? new DateTime(1900, 01, 01, 0, 0, 0);
+                LocationInput.Location = checkin.Place.Name;
                 if(ConfirmedSickPeople.CheckIfLocationIsInTheList(LocationInput))
                 {
                     result = true;
@@ -92,6 +180,7 @@ namespace Ex01.ApplicationUI
 
         private void AddToLocationsList()
         {
+            ResultStatus_label.Text = " ";
             Locations_listBox.Items.Clear();
             FacebookObjectCollection<Checkin> checkins = r_engine.Connection.LoggedUser.Checkins;
             foreach (Checkin checkin in checkins)
@@ -108,6 +197,7 @@ namespace Ex01.ApplicationUI
 
         private void Locations_listBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ResultStatus_label.Text = " ";
             if (Locations_listBox.SelectedItems.Count == 1)
             {
                 displaySelectedLocation(Locations_listBox.SelectedItem as Checkin);
@@ -120,11 +210,15 @@ namespace Ex01.ApplicationUI
             {
                 LocationDescription_textBox.Text = i_Checkin.Place.Name ?? " ";
                 LocationTimeToCheck_dateTimePicker.Value = i_Checkin.CreatedTime ?? LocationTimeToCheck_dateTimePicker.Value;
+                Hour_textBox.Text = i_Checkin.CreatedTime.Value.Hour.ToString();
+                Minute_textBox.Text = i_Checkin.CreatedTime.Value.Minute.ToString();
+                Second_TextBox.Text = i_Checkin.CreatedTime.Value.Second.ToString();
             }
         }
 
         private void Friends_listBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ResultStatus_label.Text = " ";
             if (Friends_listBox.SelectedItems.Count == 1)
             {
                 displaySelectedFriendCheckIns(Locations_listBox.SelectedItem as User);
@@ -134,14 +228,30 @@ namespace Ex01.ApplicationUI
         private void displaySelectedFriendCheckIns(User i_SelectedUser)
         {
             Friends_listBox.Items.Clear();
-
-            new Thread(() =>
+            
+            try
             {
                 foreach (Checkin checkin in i_SelectedUser.Checkins)
                 {
                     Friends_listBox.Items.Add(checkin);
                 }
-            }).Start();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Service is not Available");
+            }
+  
+           
+        }
+
+        private void loadFriend_button_Click(object sender, EventArgs e)
+        {
+            ResultStatus_label.Text = " ";
+            foreach (User friend in r_engine.Connection.LoggedUser.Friends)
+            {
+                Friends_listBox.Items.Add(friend);
+                friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
+            }
         }
     }
 }

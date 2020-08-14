@@ -41,7 +41,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationSettings.cs" />
-    <Compile Include="CheckCoronaAround.cs" />
     <Compile Include="ConfirmedSickLocation.cs" />
     <Compile Include="Covid19SickPeople.cs" />
     <Compile Include="Engine.cs" />

@@ -39,7 +39,7 @@ namespace Ex01.ApplicationEngine
 
         public ApplicationSettings()
         {
-            LastWindowLocation = new Point(50, 50);
+            LastWindowLocation = new Point(20, 20);
             LastWindowSize = new Size(1150, 640);
             RememberUser = false;
             LastAccessToken = null;

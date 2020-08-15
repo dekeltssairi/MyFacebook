@@ -86,9 +86,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Ex01.ApplicationEngine">
-      <HintPath>..\Ex01.ApplicationEngine\bin\Debug\Ex01.ApplicationEngine.dll</HintPath>
-    </Reference>
     <Reference Include="Facebook">
       <HintPath>..\Ex01.ApplicationEngine\bin\Debug\Facebook.dll</HintPath>
     </Reference>
@@ -147,6 +144,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Artboard-1-copy-5%402x_220x120.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ex01.ApplicationEngine\Ex01.ApplicationEngine.csproj">
+      <Project>{938365d6-7848-46fe-8a6c-950aa1a8c5a8}</Project>
+      <Name>Ex01.ApplicationEngine</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

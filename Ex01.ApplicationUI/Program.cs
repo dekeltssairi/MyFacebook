@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using Ex01.ApplicationUI;
+using Ex01.ApplicationEngine;
 using FacebookWrapper;
 
 namespace BasicFacebookFeatures
@@ -15,6 +16,7 @@ namespace BasicFacebookFeatures
         [STAThread]
         static void Main()
         {
+            
             Clipboard.SetText("designpatterns");
             FacebookService.s_UseForamttedToStrings = true;
             Application.EnableVisualStyles();

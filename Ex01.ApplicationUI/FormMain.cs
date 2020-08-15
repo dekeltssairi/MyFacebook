@@ -76,7 +76,7 @@ namespace Ex01.ApplicationUI
             r_AppSettings.LastWindowLocation = Location;
             r_AppSettings.LastWindowSize = Size;
             r_AppSettings.RememberUser = f_CheckBoxRememberMe.Checked;
-            if (r_AppSettings.RememberUser == true)
+            if (r_AppSettings.RememberUser)
             {
                 r_AppSettings.LastAccessToken = r_AppEngine.Connection.LoginResult.AccessToken;
             }

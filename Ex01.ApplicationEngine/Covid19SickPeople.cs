@@ -24,16 +24,17 @@ namespace Ex01.ApplicationEngine
                     covid19SickPeople = serializer.Deserialize(xmlStream) as Covid19SickPeople;
                 }
             }
+            else
+            {
+                covid19SickPeople.loadDefault();
+            }
 
             return covid19SickPeople;
         }
 
         public Covid19SickPeople()
         {
-            // load default locations
-            ConfirmedSickLocations = new List<ConfirmedSickLocation>();
-            loadDefault();
-            
+            ConfirmedSickLocations = new List<ConfirmedSickLocation>();            
         }
 
         private void loadDefault()

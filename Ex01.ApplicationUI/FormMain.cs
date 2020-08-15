@@ -47,7 +47,6 @@ namespace Ex01.ApplicationUI
             f_PictureBoxProfile.Load(r_AppEngine.Connection.LoggedUser.PictureNormalURL);
             handleButtonsVisibility();
             exposeLabels();
-            //getLastPostByUser();
         }
         private void exposeLabels()
         {
@@ -230,7 +229,14 @@ namespace Ex01.ApplicationUI
             }
             else
             {
-                new FormCovid19CheckedIn(r_AppEngine).ShowDialog();
+                try
+                {
+                    new FormCovid19CheckedIn(r_AppEngine).ShowDialog();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("You dont have any chekins");
+                }
             }
 
             f_LabelPleaseWait.Visible = false;

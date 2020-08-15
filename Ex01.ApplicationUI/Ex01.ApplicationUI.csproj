@@ -86,16 +86,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Ex01.ApplicationEngine">
+      <HintPath>..\Ex01.ApplicationEngine\bin\Debug\Ex01.ApplicationEngine.dll</HintPath>
+    </Reference>
     <Reference Include="Facebook">
-      <HintPath>..\..\..\..\Desktop\01_FB01_BasicFacebookFeatures.V6.8.0.18\01_FB01_BasicFacebookFeatures.V6.8.0.18\FBApi\Facebook.dll</HintPath>
+      <HintPath>..\Ex01.ApplicationEngine\bin\Debug\Facebook.dll</HintPath>
     </Reference>
     <Reference Include="FbGraphApiWrapper">
-      <HintPath>..\..\..\..\Desktop\01_FB01_BasicFacebookFeatures.V6.8.0.18\01_FB01_BasicFacebookFeatures.V6.8.0.18\FBApi\FbGraphApiWrapper.dll</HintPath>
+      <HintPath>..\Ex01.ApplicationEngine\bin\Debug\FbGraphApiWrapper.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="MRG.Controls.UI">
-      <HintPath>..\MRG.Controls.UI.dll\bin\Debug\MRG.Controls.UI.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -126,12 +126,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Ex01.ApplicationEngine\Ex01.ApplicationEngine.csproj">
-      <Project>{938365d6-7848-46fe-8a6c-950aa1a8c5a8}</Project>
-      <Name>Ex01.ApplicationEngine</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Contact-Facebook_Share_Image.jpg" />

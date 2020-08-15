@@ -11,8 +11,6 @@ namespace Ex01.ApplicationUI
     {
         private readonly Engine r_AppEngine = new Engine();
         private readonly ApplicationSettings r_AppSettings = ApplicationSettings.LoadFromFile();
-
-
         public  FormMain()
         {
             InitializeComponent();
@@ -227,16 +225,13 @@ namespace Ex01.ApplicationUI
             {
                 MessageBox.Show("You must loggin first!");
             }
+            else if (r_AppEngine.Connection.LoggedUser.Checkins.Count == 0)
+            {
+                MessageBox.Show("You dont have any chekins");
+            }
             else
             {
-                try
-                {
-                    new FormCovid19CheckedIn(r_AppEngine).ShowDialog();
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("You dont have any chekins");
-                }
+                new FormCovid19CheckedIn(r_AppEngine).ShowDialog();                
             }
 
             f_LabelPleaseWait.Visible = false;

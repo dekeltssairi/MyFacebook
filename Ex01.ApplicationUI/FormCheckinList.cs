@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace Ex01.ApplicationUI
 {
-    public partial class CheckInListForm : Form
+    public partial class FormCheckinList : Form
     {
-        public CheckInListForm(FacebookObjectCollection<Checkin> checkins)
+        public FormCheckinList(FacebookObjectCollection<Checkin> checkins)
         {
             InitializeComponent();
 
-            f_CheckinListBox.Items.Clear();
+            f_ListBoxCheckins.Items.Clear();
 
             foreach (Checkin checkin in checkins)
             {
-                f_CheckinListBox.Items.Add(checkin.Place.Name);
+                f_ListBoxCheckins.Items.Add(checkin.Place.Name);
             }
         }
 

@@ -24,9 +24,9 @@ namespace Ex01.ApplicationUI
 
         private void initializeComponent(User friend, int numOfPosts, PictureBox f_ProfilePictureBox)
         {
-            numOfPostLabel.Text = string.Format("Most Digging Friend is {0}. He post {1} posts last year", friend.Name, numOfPosts.ToString());
-            friendNameLabel.Text = friend.Name;
-            profilePicturePictureBox.Load(friend.PictureLargeURL);
+            f_LabelNumOfPosts.Text = string.Format("Most Digging Friend is {0}. He post {1} posts last year", friend.Name, numOfPosts.ToString());
+            f_LabelFriendName.Text = friend.Name;
+            f_PictureBoxProfilePicture.Load(friend.PictureLargeURL);
             //coverPhotoPictureBox.Load(friend.Cover.SourceURL);
 
             

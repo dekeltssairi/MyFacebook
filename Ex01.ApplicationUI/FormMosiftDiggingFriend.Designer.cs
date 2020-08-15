@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.friendNameLabel = new System.Windows.Forms.Label();
+            this.f_LabelFriendName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.profilePicturePictureBox = new System.Windows.Forms.PictureBox();
-            this.numOfPostLabel = new System.Windows.Forms.Label();
+            this.f_PictureBoxProfilePicture = new System.Windows.Forms.PictureBox();
+            this.f_LabelNumOfPosts = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.profilePicturePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.f_PictureBoxProfilePicture)).BeginInit();
             this.SuspendLayout();
             // 
-            // friendNameLabel
+            // f_LabelFriendName
             // 
-            this.friendNameLabel.AutoSize = true;
-            this.friendNameLabel.Location = new System.Drawing.Point(317, 98);
-            this.friendNameLabel.Name = "friendNameLabel";
-            this.friendNameLabel.Size = new System.Drawing.Size(116, 17);
-            this.friendNameLabel.TabIndex = 2;
-            this.friendNameLabel.Text = "friendNameLabel";
+            this.f_LabelFriendName.AutoSize = true;
+            this.f_LabelFriendName.Location = new System.Drawing.Point(317, 98);
+            this.f_LabelFriendName.Name = "f_LabelFriendName";
+            this.f_LabelFriendName.Size = new System.Drawing.Size(116, 17);
+            this.f_LabelFriendName.TabIndex = 2;
+            this.f_LabelFriendName.Text = "friendNameLabel";
             // 
             // label2
             // 
@@ -75,40 +75,40 @@
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
             // 
-            // profilePicturePictureBox
+            // f_PictureBoxProfilePicture
             // 
-            this.profilePicturePictureBox.Location = new System.Drawing.Point(237, 194);
-            this.profilePicturePictureBox.Name = "profilePicturePictureBox";
-            this.profilePicturePictureBox.Size = new System.Drawing.Size(271, 186);
-            this.profilePicturePictureBox.TabIndex = 0;
-            this.profilePicturePictureBox.TabStop = false;
+            this.f_PictureBoxProfilePicture.Location = new System.Drawing.Point(237, 194);
+            this.f_PictureBoxProfilePicture.Name = "f_PictureBoxProfilePicture";
+            this.f_PictureBoxProfilePicture.Size = new System.Drawing.Size(271, 186);
+            this.f_PictureBoxProfilePicture.TabIndex = 0;
+            this.f_PictureBoxProfilePicture.TabStop = false;
             // 
-            // numOfPostLabel
+            // f_LabelNumOfPosts
             // 
-            this.numOfPostLabel.AutoSize = true;
-            this.numOfPostLabel.Location = new System.Drawing.Point(473, 407);
-            this.numOfPostLabel.Name = "numOfPostLabel";
-            this.numOfPostLabel.Size = new System.Drawing.Size(113, 17);
-            this.numOfPostLabel.TabIndex = 6;
-            this.numOfPostLabel.Text = "numOfPostLabel";
+            this.f_LabelNumOfPosts.AutoSize = true;
+            this.f_LabelNumOfPosts.Location = new System.Drawing.Point(473, 407);
+            this.f_LabelNumOfPosts.Name = "f_LabelNumOfPosts";
+            this.f_LabelNumOfPosts.Size = new System.Drawing.Size(92, 17);
+            this.f_LabelNumOfPosts.TabIndex = 6;
+            this.f_LabelNumOfPosts.Text = "Num of Posts";
             // 
             // FormMosiftDiggingFriend
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(898, 457);
-            this.Controls.Add(this.numOfPostLabel);
+            this.Controls.Add(this.f_LabelNumOfPosts);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.friendNameLabel);
-            this.Controls.Add(this.profilePicturePictureBox);
+            this.Controls.Add(this.f_LabelFriendName);
+            this.Controls.Add(this.f_PictureBoxProfilePicture);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FormMosiftDiggingFriend";
             this.Text = "Form2";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.profilePicturePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.f_PictureBoxProfilePicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,11 +116,11 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox profilePicturePictureBox;
-        private System.Windows.Forms.Label friendNameLabel;
+        private System.Windows.Forms.PictureBox f_PictureBoxProfilePicture;
+        private System.Windows.Forms.Label f_LabelFriendName;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label numOfPostLabel;
+        private System.Windows.Forms.Label f_LabelNumOfPosts;
     }
 }

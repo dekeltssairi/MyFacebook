@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Ex01.ApplicationUI
 {
-    public partial class PostForm : Form
+    public partial class FormPost : Form
     {
-        public PostForm()
+        public FormPost()
         {
             InitializeComponent();
         }

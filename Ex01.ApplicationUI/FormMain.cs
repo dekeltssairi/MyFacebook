@@ -2,91 +2,88 @@
 using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ex01.ApplicationUI
 {
-    public partial class Form1 : Form
+    public partial class FormMain : Form
     {
         private readonly Engine r_AppEngine = new Engine();
         private readonly ApplicationSettings r_AppSettings = ApplicationSettings.LoadFromFile();
 
 
-        public  Form1()
+        public  FormMain()
         {
-
             InitializeComponent();
             r_AppEngine.Connection = new FBConnector();
-            //this.Size = new System.Drawing.Size(1050, 630);
         }
-
         private void applyAppSettings()
         {
             this.StartPosition = FormStartPosition.Manual;
-            f_RememberMeCheckBox.Checked = r_AppSettings.RememberUser;
-            //this.Size = r_AppSettings.LastWindowSize;
+            f_CheckBoxRememberMe.Checked = r_AppSettings.RememberUser;
             this.Location = r_AppSettings.LastWindowLocation;
         }
-
         private void buttonLogin_Click(object sender, EventArgs e)
         {
+            f_LabelPleaseWait.Visible = true;
             r_AppEngine.Connection.LogIn();
             r_AppSettings.LastAccessToken = r_AppEngine.Connection.AccessToken;
-            fetchUserInf();
+            fetchUserInfo();
+            f_LabelPleaseWait.Visible = false;
         }
-
         protected override void OnShown(EventArgs e)
         {
             if (r_AppSettings.RememberUser && !String.IsNullOrEmpty(r_AppSettings.LastAccessToken))
             {
                 r_AppEngine.Connection.Connect(r_AppSettings.LastAccessToken);
-                fetchUserInf();
+                fetchUserInfo();
             }
         }
-
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             //r_AppEngine.Connection.LogIn();
             //r_AppSettings.LastAccessToken = r_AppEngine.Connection.AccessToken;
             //fetchUserInf();
         }
-
-        private void fetchUserInf()
+        private void fetchUserInfo()
         {
-            enableButtons();
             r_AppEngine.Connection.LoggedUser = r_AppEngine.Connection.LoginResult.LoggedInUser;
-            f_ProfilePictureBox.Load(r_AppEngine.Connection.LoggedUser.PictureNormalURL);
-            helloUserLabel.Text = string.Format("Welcome {0}!", r_AppEngine.Connection.LoggedUser.Name);
-            helloUserLabel.Visible = true;
-
-           
-            getLastPostByUser();
+            f_PictureBoxProfile.Load(r_AppEngine.Connection.LoggedUser.PictureNormalURL);
+            handleButtonsVisibility();
+            exposeLabels();
+            //getLastPostByUser();
         }
-
-        private void enableButtons()
+        private void exposeLabels()
         {
-            buttonLogout.Enabled = true;
-            buttonLogin.Enabled = false;
-            f_Postbutton.Enabled = true;
-            f_ShowFriendsButton.Enabled = true;
-            f_PostCommentslistBox.Enabled = true;
+            f_LabelHelloUser.Text = string.Format("Welcome {0}!", r_AppEngine.Connection.LoggedUser.Name);
+            f_LabelHelloUser.Visible = true;
+            f_LabelBirthDate.Text = string.Format("Birth date: {0}", r_AppEngine.Connection.LoggedUser.Birthday);
+            f_LabelBirthDate.Visible = true;
+            f_LabelGender.Text = string.Format("Gender: {0}", r_AppEngine.Connection.LoggedUser.Gender);
+            f_LabelGender.Visible = true;
         }
-
+        private void handleButtonsVisibility()
+        {
+            f_ButtonPost.Enabled = !f_ButtonPost.Enabled;
+            f_ButtonLogin.Enabled = !f_ButtonLogin.Enabled;
+            f_ButtonLogout.Enabled = !f_ButtonLogout.Enabled;
+            f_ButtonCovid19.Enabled = !f_ButtonCovid19.Enabled;
+            f_ButtonMyAlbums.Enabled = !f_ButtonMyAlbums.Enabled;
+            f_ButtonShowLikes.Enabled = !f_ButtonShowLikes.Enabled;
+            f_ButtonShowChekins.Enabled = !f_ButtonShowChekins.Enabled;
+            f_ButtonShowMyPosts.Enabled = !f_ButtonShowMyPosts.Enabled;
+            f_ButtonShowFriends.Enabled = !f_ButtonShowFriends.Enabled;
+            f_ButtonShowMyEvents.Enabled = !f_ButtonShowMyEvents.Enabled;
+            f_ButtonShowMostDiggingFriend.Enabled = !f_ButtonShowMostDiggingFriend.Enabled;
+        }
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
 
             r_AppSettings.LastWindowLocation = Location;
             r_AppSettings.LastWindowSize = Size;
-            r_AppSettings.RememberUser = f_RememberMeCheckBox.Checked;
+            r_AppSettings.RememberUser = f_CheckBoxRememberMe.Checked;
             if (r_AppSettings.RememberUser == true)
             {
                 r_AppSettings.LastAccessToken = r_AppEngine.Connection.LoginResult.AccessToken;
@@ -98,61 +95,26 @@ namespace Ex01.ApplicationUI
 
             r_AppSettings.SaveToFile();
         }
-
-        private void getLastPostByUser()
-        {
-            Post latestPost = null;
-
-            try
-            {
-                if (r_AppEngine.Connection.LoggedUser.Posts.Count > 0)
-                {
-                    latestPost = r_AppEngine.Connection.LoggedUser.Posts[0];
-                    if (latestPost.Type.Value == Post.eType.status)
-                    {
-                        f_lastPostStaus.Visible = true;
-                        f_lastPostStaus.Text = latestPost.Message;
-                        f_lastPostStaus.ReadOnly = true;
-                    }
-                    else if (latestPost.Type.Value == Post.eType.photo)
-                    {
-                        f_EventpictureBox.Visible = true;
-                        f_EventpictureBox.LoadAsync(latestPost.PictureURL);
-                    }
-                }
-            }
-            catch (Exception)
-            {
-            }
-        }
-
         private void clearForm()
         {
-            this.Dispose(false);
-           new Form1().Show();
-
+           this.Dispose(false);
+           new FormMain().Show();
         }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fetchPosts()
+        private void fetchPosts()                   // try just to add the post as is
         {
             foreach (Post post in r_AppEngine.Connection.LoggedUser.Posts)
             {
                 if (post.Message != null)
                 {
-                    listBox1.Items.Add(post.Message);
+                    f_ListBoxPosts.Items.Add(post.Message);
                 }
                 else if (post.Caption != null)
                 {
-                    listBox1.Items.Add(post.Caption);
+                    f_ListBoxPosts.Items.Add(post.Caption);
                 }
                 else
                 {
-                    listBox1.Items.Add(string.Format("[{0}]", post.Type));
+                    f_ListBoxPosts.Items.Add(string.Format("[{0}]", post.Type));
                 }
             }
 
@@ -161,51 +123,46 @@ namespace Ex01.ApplicationUI
                 MessageBox.Show("No Posts to retrieve :(");
             }
         }
-
         private void buttonLogout_Click(object sender, EventArgs e)
         {
             if (r_AppEngine.Connection.LoggedUser != null)
             {
                 FacebookService.Logout(() => { });
-                f_RememberMeCheckBox.Checked = false;
+                f_CheckBoxRememberMe.Checked = false;
                 r_AppSettings.RememberUser = false;
                 r_AppSettings.SaveToFile();
                 clearForm();
-
             }
             else
             {
                 MessageBox.Show("You must loggin first!");
             }
-
         }
-
         private void f_ShowFriendsButton_Click(object sender, EventArgs e)
         {
-
+            f_LabelPleaseWait.Visible = true;
             if (r_AppEngine.Connection.LoggedUser == null)
             {
                 MessageBox.Show("You must loggin first!");
-
             }
             else if (r_AppEngine.Connection.LoggedUser.Friends.Count == 0)
             {
                 MessageBox.Show("No Friends to retrieve :(");
-
             }
             else
             {
                 new Thread(onFriendListThread).Start();
             }
 
+            f_LabelPleaseWait.Visible = false;
         }
-
         private void onFriendListThread()
         {
-            new FriendsListForm(r_AppEngine.Connection.LoggedUser.Friends).ShowDialog();
+            new FormFriendList(r_AppEngine.Connection.LoggedUser.Friends).ShowDialog();
         }
         private void f_CheckinsButton_Click(object sender, EventArgs e)
         {
+            f_LabelPleaseWait.Visible = true;
             if (r_AppEngine.Connection.LoggedUser == null)
             {
                 MessageBox.Show("You must loggin first!");
@@ -216,67 +173,62 @@ namespace Ex01.ApplicationUI
             }
             else
             {
-                new CheckInListForm(r_AppEngine.Connection.LoggedUser.Checkins).ShowDialog();
+                new FormCheckinList(r_AppEngine.Connection.LoggedUser.Checkins).ShowDialog();
             }
-        }
 
+            f_LabelPleaseWait.Visible = false;
+        }
         private void fetchEvents()
         {
-            listBoxEvents.DisplayMember = "Name";
+            f_ListBoxEvents.DisplayMember = "Name";
             foreach (Event fbEvent in r_AppEngine.Connection.LoggedUser.Events)
             {
-                listBoxEvents.Items.Add(fbEvent);
+                f_ListBoxEvents.Items.Add(fbEvent);
             }
-
         }
         private void buttonMostDiggingFriend_Click(object sender, EventArgs e)
         {
+            f_LabelPleaseWait.Visible = true;
             if (r_AppEngine.Connection.LoggedUser != null)
             {
-
                 DateTime lastYear = DateTime.Today.AddYears(-1);
                 User mostDiggingFriend = null;
-                int maxNumOfPosts = 0;
-                int numOfLastYearFriendPost;
+                int postCounter, maxNumOfPosts = 0;
+                
                 foreach (User friend in r_AppEngine.Connection.LoggedUser.Friends)
                 {
-                    numOfLastYearFriendPost = 0;
+                    postCounter = 0;
                     foreach (Post post in friend.Posts)
                     {
                         if (post.CreatedTime > lastYear)
                         {
-                            numOfLastYearFriendPost++;
+                            postCounter++;
                         }
                     }
-                    if (numOfLastYearFriendPost > maxNumOfPosts)
+                    if (postCounter > maxNumOfPosts)
                     {
-                        maxNumOfPosts = numOfLastYearFriendPost;
+                        maxNumOfPosts = postCounter;
                         mostDiggingFriend = friend;
                     }
                 }
 
-                new FormMosiftDiggingFriend(mostDiggingFriend, f_ProfilePictureBox, maxNumOfPosts).ShowDialog();
-                MessageBox.Show(string.Format("Most Digging Friend is {0}. He post {1} posts last year", mostDiggingFriend.Name, maxNumOfPosts.ToString()));
+                new FormMosiftDiggingFriend(mostDiggingFriend, f_PictureBoxProfile, maxNumOfPosts).ShowDialog();
             }
-
             else
             {
                 MessageBox.Show("You must loggin first!");
             }
-        
-        }
-        private void FormAppMain_Load(object sender, EventArgs e)
-        {
 
+            f_LabelPleaseWait.Visible = false;
         }
-
         private void f_Postbutton_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Out of Permission!");
         }
-
         private void Covid19_button_Click(object sender, EventArgs e)
         {
+            f_LabelPleaseWait.Visible = true;
+
             if (r_AppEngine.Connection.LoggedUser == null)
             {
                 MessageBox.Show("You must loggin first!");
@@ -285,23 +237,29 @@ namespace Ex01.ApplicationUI
             {
                 new FormCovid19CheckedIn(r_AppEngine).ShowDialog();
             }
-        }
 
+            f_LabelPleaseWait.Visible = false;
+        }
         private void buttonShowMyPost_Click(object sender, EventArgs e)
         {
+            f_LabelPleaseWait.Visible = true;
+
             if (r_AppEngine.Connection.LoggedUser != null)
             {
-                listBox1.Items.Clear();
+                f_ListBoxPosts.Items.Clear();
                 fetchPosts();
             }
             else
             {
                 MessageBox.Show("You must loggin first!");
             }
-        }
 
+            f_LabelPleaseWait.Visible = false;
+        }
         private void buttonShowMyEvents_Click(object sender, EventArgs e)
         {
+            f_LabelPleaseWait.Visible = true;
+
             if (r_AppEngine.Connection.LoggedUser == null)
             {
                 MessageBox.Show("You must loggin first!");
@@ -314,7 +272,29 @@ namespace Ex01.ApplicationUI
             {
                 fetchEvents();
             }
+
+            f_LabelPleaseWait.Visible = false;
+        }
+        private void buttonShowMyLikes_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Out of Permission!");
+        }
+        private void buttonMyAlbums_Click(object sender, EventArgs e)
+        {
+            f_LabelPleaseWait.Visible = true;
+            if (r_AppEngine.Connection.LoggedUser == null)
+            {
+                MessageBox.Show("You must loggin first!");
+            }
+            else if (r_AppEngine.Connection.LoggedUser.Albums.Count == 0)
+            {
+                MessageBox.Show("No albums to retrieve :(");
+            }
+            else
+            {
+                f_LabelPleaseWait.Visible = false;
+                new FormAlbums(r_AppEngine.Connection.LoggedUser.Albums).ShowDialog();  
+            }
         }
     }
 }
-

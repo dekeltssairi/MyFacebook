@@ -12,12 +12,12 @@ using System.Windows.Forms;
 
 namespace Ex01.ApplicationUI
 {
-    public partial class FriendsListForm : Form
+    public partial class FormFriendList : Form
     {
-        public FriendsListForm(FacebookObjectCollection<User> friends)
+        public FormFriendList(FacebookObjectCollection<User> friends)
         {
             InitializeComponent();
-            f_FriendsListBox.Items.Clear();
+            f_ListBoxFriends.Items.Clear();
             fillFriends(friends);
         }
 
@@ -25,7 +25,7 @@ namespace Ex01.ApplicationUI
         {
             foreach (User friend in i_Friends)
             {
-                f_FriendsListBox.Items.Add(friend);
+                f_ListBoxFriends.Items.Add(friend);
                 friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
             }
         }
@@ -34,11 +34,11 @@ namespace Ex01.ApplicationUI
         {               
                 if (i_Selecteduser.PictureNormalURL != null)
                 {
-                    f_PictureBox.LoadAsync(i_Selecteduser.PictureNormalURL);
+                    f_PictureBoxProfile.LoadAsync(i_Selecteduser.PictureNormalURL);
                 }
                 else
                 {
-                    f_PictureBox.Image = f_PictureBox.ErrorImage;
+                    f_PictureBoxProfile.Image = f_PictureBoxProfile.ErrorImage;
                 }
 
                 displaySelectedFriendPosts(i_Selecteduser.Posts);   
@@ -46,10 +46,10 @@ namespace Ex01.ApplicationUI
 
         private void displaySelectedFriendPosts(FacebookObjectCollection<Post> i_friendsPosts)
         {
-            f_PostListBox.Items.Clear();
+            f_ListBoxPosts.Items.Clear();
            foreach (Post post in i_friendsPosts)
                 {
-                    f_PostListBox.Items.Add(post);
+                    f_ListBoxPosts.Items.Add(post);
                 }
            
             
@@ -57,8 +57,8 @@ namespace Ex01.ApplicationUI
 
         private void listBoxFriends_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (f_FriendsListBox.SelectedItems.Count == 1)
-                displaySelectedFriend(f_FriendsListBox.SelectedItem as User);
+            if (f_ListBoxFriends.SelectedItems.Count == 1)
+                displaySelectedFriend(f_ListBoxFriends.SelectedItem as User);
         }
         private void f_PostListBox_SelectedIndexChanged(object sender, EventArgs e)
         {

@@ -63,6 +63,16 @@ namespace Ex01.ApplicationUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Artboard_1_copy_5_2x_220x120 {
+            get {
+                object obj = ResourceManager.GetObject("Artboard-1-copy-5@2x_220x120", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Contact_Facebook_Share_Image {
             get {
                 object obj = ResourceManager.GetObject("Contact-Facebook_Share_Image", resourceCulture);

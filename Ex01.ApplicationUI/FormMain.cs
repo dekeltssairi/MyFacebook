@@ -40,12 +40,7 @@ namespace Ex01.ApplicationUI
                 fetchUserInfo();
             }
         }
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            //r_AppEngine.Connection.LogIn();
-            //r_AppSettings.LastAccessToken = r_AppEngine.Connection.AccessToken;
-            //fetchUserInf();
-        }
+
         private void fetchUserInfo()
         {
             r_AppEngine.Connection.LoggedUser = r_AppEngine.Connection.LoginResult.LoggedInUser;

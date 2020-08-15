@@ -1,0 +1,44 @@
+C:\Users\noam2\Source\Repos\MyFacebook\Ex01.ApplicationUI\obj\Debug\Ex01.ApplicationUI.csproj.CoreCompileInputs.cache
+C:\Users\noam2\Source\Repos\MyFacebook\Ex01.ApplicationUI\obj\Debug\Ex01.ApplicationUI.csprojAssemblyReference.cache
+C:\Users\noam2\Source\Repos\MyFacebook\Ex01.ApplicationUI\obj\Debug\Ex01.ApplicationUI.csproj.GenerateResource.cache
+C:\Users\noam2\Source\Repos\MyFacebook\Ex01.ApplicationUI\bin\Debug\Ex01.ApplicationUI.exe.config
+C:\Users\noam2\Source\Repos\MyFacebook\Ex01.ApplicationUI\bin\Debug\Ex01.ApplicationUI.exe
+C:\Users\noam2\Source\Repos\MyFacebook\Ex01.ApplicationUI\bin\Debug\Ex01.ApplicationUI.pdb
+C:\Users\noam2\Source\Repos\MyFacebook\Ex01.ApplicationUI\bin\Debug\Ex01.ApplicationEngine.dll
+C:\Users\noam2\Source\Repos\MyFacebook\Ex01.ApplicationUI\bin\Debug\Facebook.dll
+C:\Users\noam2\Source\Repos\MyFacebook\Ex01.ApplicationUI\bin\Debug\FbGraphApiWrapper.dll
+C:\Users\noam2\Source\Repos\MyFacebook\Ex01.ApplicationUI\bin\Debug\Ex01.ApplicationEngine.pdb
+C:\Users\noam2\Source\Repos\MyFacebook\Ex01.ApplicationUI\bin\Debug\Ex01.ApplicationEngine.dll.config
+C:\Users\noam2\Source\Repos\MyFacebook\Ex01.ApplicationUI\obj\Debug\Ex01.ApplicationUI.csproj.CopyComplete
+C:\Users\noam2\Source\Repos\MyFacebook\Ex01.ApplicationUI\obj\Debug\Ex01.ApplicationUI.exe
+C:\Users\noam2\Source\Repos\MyFacebook\Ex01.ApplicationUI\obj\Debug\Ex01.ApplicationUI.pdb
+C:\Users\noam2\source\repos\MyFacebook\Ex01.ApplicationUI\bin\Debug\MRG.Controls.UI.dll
+C:\Users\noam2\source\repos\MyFacebook\Ex01.ApplicationUI\bin\Debug\MRG.Controls.UI.pdb
+C:\Users\noam2\source\repos\MyFacebook\Ex01.ApplicationUI\obj\Debug\Ex01.ApplicationUI.FormCovid19CheckedIn.resources
+C:\Users\noam2\source\repos\MyFacebook\Ex01.ApplicationUI\obj\Debug\Ex01.ApplicationUI.Properties.Resources.resources
+C:\Users\noam2\source\repos\MyFacebook\Ex01.ApplicationUI\obj\Debug\Ex01.ApplicationUI.FormCheckinList.resources
+C:\Users\noam2\source\repos\MyFacebook\Ex01.ApplicationUI\obj\Debug\Ex01.ApplicationUI.FormMain.resources
+C:\Users\noam2\source\repos\MyFacebook\Ex01.ApplicationUI\obj\Debug\Ex01.ApplicationUI.FormMosiftDiggingFriend.resources
+C:\Users\noam2\source\repos\MyFacebook\Ex01.ApplicationUI\obj\Debug\Ex01.ApplicationUI.FormFriendList.resources
+C:\Users\noam2\source\repos\MyFacebook\Ex01.ApplicationUI\obj\Debug\Ex01.ApplicationUI.FormAlbums.resources
+C:\Users\noam2\source\repos\C20 Ex01 DekelTsairi 311319057 NoamCohen 308337930\C20 Ex01 Dekel 311319057 Noam 308337930\Ex01.ApplicationUI\bin\Debug\Ex01.ApplicationUI.exe.config
+C:\Users\noam2\source\repos\C20 Ex01 DekelTsairi 311319057 NoamCohen 308337930\C20 Ex01 Dekel 311319057 Noam 308337930\Ex01.ApplicationUI\bin\Debug\Ex01.ApplicationUI.exe
+C:\Users\noam2\source\repos\C20 Ex01 DekelTsairi 311319057 NoamCohen 308337930\C20 Ex01 Dekel 311319057 Noam 308337930\Ex01.ApplicationUI\bin\Debug\Ex01.ApplicationUI.pdb
+C:\Users\noam2\source\repos\C20 Ex01 DekelTsairi 311319057 NoamCohen 308337930\C20 Ex01 Dekel 311319057 Noam 308337930\Ex01.ApplicationUI\bin\Debug\Ex01.ApplicationEngine.dll
+C:\Users\noam2\source\repos\C20 Ex01 DekelTsairi 311319057 NoamCohen 308337930\C20 Ex01 Dekel 311319057 Noam 308337930\Ex01.ApplicationUI\bin\Debug\MRG.Controls.UI.dll
+C:\Users\noam2\source\repos\C20 Ex01 DekelTsairi 311319057 NoamCohen 308337930\C20 Ex01 Dekel 311319057 Noam 308337930\Ex01.ApplicationUI\bin\Debug\Ex01.ApplicationEngine.pdb
+C:\Users\noam2\source\repos\C20 Ex01 DekelTsairi 311319057 NoamCohen 308337930\C20 Ex01 Dekel 311319057 Noam 308337930\Ex01.ApplicationUI\bin\Debug\Ex01.ApplicationEngine.dll.config
+C:\Users\noam2\source\repos\C20 Ex01 DekelTsairi 311319057 NoamCohen 308337930\C20 Ex01 Dekel 311319057 Noam 308337930\Ex01.ApplicationUI\bin\Debug\MRG.Controls.UI.pdb
+C:\Users\noam2\source\repos\C20 Ex01 DekelTsairi 311319057 NoamCohen 308337930\C20 Ex01 Dekel 311319057 Noam 308337930\Ex01.ApplicationUI\obj\Debug\Ex01.ApplicationUI.csprojAssemblyReference.cache
+C:\Users\noam2\source\repos\C20 Ex01 DekelTsairi 311319057 NoamCohen 308337930\C20 Ex01 Dekel 311319057 Noam 308337930\Ex01.ApplicationUI\obj\Debug\Ex01.ApplicationUI.FormCheckinList.resources
+C:\Users\noam2\source\repos\C20 Ex01 DekelTsairi 311319057 NoamCohen 308337930\C20 Ex01 Dekel 311319057 Noam 308337930\Ex01.ApplicationUI\obj\Debug\Ex01.ApplicationUI.FormMain.resources
+C:\Users\noam2\source\repos\C20 Ex01 DekelTsairi 311319057 NoamCohen 308337930\C20 Ex01 Dekel 311319057 Noam 308337930\Ex01.ApplicationUI\obj\Debug\Ex01.ApplicationUI.FormMosiftDiggingFriend.resources
+C:\Users\noam2\source\repos\C20 Ex01 DekelTsairi 311319057 NoamCohen 308337930\C20 Ex01 Dekel 311319057 Noam 308337930\Ex01.ApplicationUI\obj\Debug\Ex01.ApplicationUI.FormCovid19CheckedIn.resources
+C:\Users\noam2\source\repos\C20 Ex01 DekelTsairi 311319057 NoamCohen 308337930\C20 Ex01 Dekel 311319057 Noam 308337930\Ex01.ApplicationUI\obj\Debug\Ex01.ApplicationUI.FormFriendList.resources
+C:\Users\noam2\source\repos\C20 Ex01 DekelTsairi 311319057 NoamCohen 308337930\C20 Ex01 Dekel 311319057 Noam 308337930\Ex01.ApplicationUI\obj\Debug\Ex01.ApplicationUI.FormAlbums.resources
+C:\Users\noam2\source\repos\C20 Ex01 DekelTsairi 311319057 NoamCohen 308337930\C20 Ex01 Dekel 311319057 Noam 308337930\Ex01.ApplicationUI\obj\Debug\Ex01.ApplicationUI.Properties.Resources.resources
+C:\Users\noam2\source\repos\C20 Ex01 DekelTsairi 311319057 NoamCohen 308337930\C20 Ex01 Dekel 311319057 Noam 308337930\Ex01.ApplicationUI\obj\Debug\Ex01.ApplicationUI.csproj.GenerateResource.cache
+C:\Users\noam2\source\repos\C20 Ex01 DekelTsairi 311319057 NoamCohen 308337930\C20 Ex01 Dekel 311319057 Noam 308337930\Ex01.ApplicationUI\obj\Debug\Ex01.ApplicationUI.csproj.CoreCompileInputs.cache
+C:\Users\noam2\source\repos\C20 Ex01 DekelTsairi 311319057 NoamCohen 308337930\C20 Ex01 Dekel 311319057 Noam 308337930\Ex01.ApplicationUI\obj\Debug\Ex01.ApplicationUI.csproj.CopyComplete
+C:\Users\noam2\source\repos\C20 Ex01 DekelTsairi 311319057 NoamCohen 308337930\C20 Ex01 Dekel 311319057 Noam 308337930\Ex01.ApplicationUI\obj\Debug\Ex01.ApplicationUI.exe
+C:\Users\noam2\source\repos\C20 Ex01 DekelTsairi 311319057 NoamCohen 308337930\C20 Ex01 Dekel 311319057 Noam 308337930\Ex01.ApplicationUI\obj\Debug\Ex01.ApplicationUI.pdb

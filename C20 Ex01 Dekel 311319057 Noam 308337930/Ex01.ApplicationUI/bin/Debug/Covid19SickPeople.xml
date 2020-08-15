@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<Covid19SickPeople xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ConfirmedSickLocations>
+    <ConfirmedSickLocation>
+      <Location>האקדמית תא יפו</Location>
+      <DateOfSickConfirmation>2020-04-03T10:30:00</DateOfSickConfirmation>
+    </ConfirmedSickLocation>
+    <ConfirmedSickLocation>
+      <Location>ardsegarwe</Location>
+      <DateOfSickConfirmation>2020-08-15T00:00:00</DateOfSickConfirmation>
+    </ConfirmedSickLocation>
+    <ConfirmedSickLocation>
+      <Location>hila </Location>
+      <DateOfSickConfirmation>2020-08-01T00:00:00</DateOfSickConfirmation>
+    </ConfirmedSickLocation>
+  </ConfirmedSickLocations>
+</Covid19SickPeople>

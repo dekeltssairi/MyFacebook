@@ -16,13 +16,13 @@ namespace Ex01.ApplicationUI
 
        
 
-        public FormMosiftDiggingFriend(User mostDiggingFriend, PictureBox f_ProfilePictureBox, int maxNumOfPosts)
+        public FormMosiftDiggingFriend(User mostDiggingFriend, int maxNumOfPosts)
         {
             InitializeComponent();                              // designer code
-            initializeComponent(mostDiggingFriend, maxNumOfPosts, f_ProfilePictureBox);
+            initializeComponent(mostDiggingFriend, maxNumOfPosts);
         }
 
-        private void initializeComponent(User friend, int numOfPosts, PictureBox f_ProfilePictureBox)
+        private void initializeComponent(User friend, int numOfPosts)
         {
             f_LabelNumOfPosts.Text = string.Format("Most Digging Friend is {0}. He post {1} posts last year", friend.Name, numOfPosts.ToString());
             f_LabelFriendName.Text = friend.Name;

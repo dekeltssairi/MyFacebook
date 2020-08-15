@@ -206,7 +206,7 @@ namespace Ex01.ApplicationUI
                     }
                 }
 
-                new FormMosiftDiggingFriend(mostDiggingFriend, f_PictureBoxProfile, maxNumOfPosts).ShowDialog();
+                new FormMosiftDiggingFriend(mostDiggingFriend, maxNumOfPosts).ShowDialog();
             }
             else
             {
